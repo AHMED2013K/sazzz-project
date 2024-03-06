@@ -1,25 +1,28 @@
-// Fonction pour afficher ou masquer la modalité
+// Function to toggle modal and apply animation
 function toggleModal() {
   var modal = document.getElementById("myModal");
   modal.classList.toggle("active");
+
+  // Add animation class
+  modal.classList.toggle("slide-in");
 }
 
-// Fonction pour soumettre le formulaire
+// Function to submit the form
 function submitForm(event) {
   event.preventDefault();
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
-  // Convertir les données du formulaire en objet JSON
+  // Convert form data to JSON object
   var jsonObject = {};
   formData.forEach(function(value, key) {
     jsonObject[key] = value;
   });
 
-  // Remplacez 'https://api.example.com/sheets' par l'URL de déploiement
+  // Replace 'https://api.example.com/sheets' with deployment URL
   var url = 'https://script.google.com/macros/s/AKfycbzDEP78QP8vhZWNEHimoSzlwACkLZe-rosQHEE5uM8O0OgelI8DtWZRn6zsmRGRZrAD/exec';
 
-  // Envoyer les données JSON à Google Sheets
+  // Send JSON data to Google Sheets
   fetch(url, {
     method: 'POST',
     headers: {
@@ -32,7 +35,7 @@ function submitForm(event) {
       throw new Error('Network response was not ok');
     }
     alert('Application submitted successfully!');
-    toggleModal(); // Fermer la modalité après avoir soumis le formulaire
+    toggleModal(); // Close modal after form submission
   })
   .catch(error => {
     console.error('There was an error!', error);
