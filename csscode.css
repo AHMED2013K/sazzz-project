@@ -1,16 +1,22 @@
-/* Styles généraux */
-*, :before, :after {
+/* General styles */
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 body {
   background: lighten(#474747, 10%) url(https://i.imgur.com/Zz4k6aM.jpeg) center/cover no-repeat;
   height: 100vh;
   overflow: hidden;
-  color: #FFF;
+  color: #fff;
   font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Modal */
@@ -18,18 +24,14 @@ body {
   height: 470px;
   width: 650px;
   margin: auto;
-  box-shadow: 0 15px 35px rgba(#000, .5);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: .4s, box-shadow .3s .4s;
+  box-shadow: 0 15px 35px rgba(#000, 0.5);
+  position: relative;
 }
 
-/* Form et invite */
-.form, .invite {
-  background: rgba(#474747, .8);
+/* Form and invite */
+.form,
+.invite {
+  background: rgba(#474747, 0.8);
   width: 50%;
   height: 100%;
   padding: 25px;
@@ -40,30 +42,26 @@ body {
 
 /* Input */
 input {
-  background: rgba(#FFF, .15);
+  background: rgba(#fff, 0.15);
   width: 100%;
   padding: 8px;
   margin: 15px 0;
   border: none;
   border-radius: 3px;
   outline: none;
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
-  &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 500px lighten(#474747, 20%) inset;
-    -webkit-text-fill-color: #FFF;
-  }
 }
 
 /* Label */
 label {
   font: 500 14px Roboto;
-  color: #2E9CB6;
+  color: #2e9cb6;
 }
 
-/* Bouton */
+/* Button */
 button {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient(-45deg, #2e9cb6, #2e9cb6);
   padding: 10px 20px;
   border: none;
   border-radius: 21px;
@@ -72,69 +70,74 @@ button {
   position: absolute;
   bottom: 30px;
   left: 50%;
-  color: #FFF;
+  color: #fff;
   font-size: 18px;
   cursor: pointer;
   transform: translateX(-50%);
-  &:hover:before {
-    left: 110%;
-    transition: .3s;
-  }
-  &:before {
-    content: '';
-    background: rgba(#FFF, .3);
-    height: 100%;
-    width: 65px;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    transform: skew(-45deg);
-    transition: 0s;
-  }
+}
+
+button:hover:before {
+  left: 110%;
+  transition: 0.3s;
+}
+
+button:before {
+  content: '';
+  background: rgba(#fff, 0.3);
+  height: 100%;
+  width: 65px;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skew(-45deg);
+  transition: 0s;
 }
 
 /* Invite */
 .invite {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient(-45deg, #2e9cb6, #2e9cb6);
   left: 50%;
 }
 
-/* Titre */
+/* Title */
 h3 {
   font: 30px Roboto;
   text-transform: uppercase;
 }
 
-/* Bouton de fermeture */
+/* Close button */
 .close {
   background: #474747;
   height: 30px;
   width: 30px;
-  border: 3px solid #FFF;
+  border: 3px solid #fff;
   border-radius: 50%;
   position: absolute;
   top: -15px;
   right: -15px;
   cursor: pointer;
-  transition: .4s .3s;
-  &:before, &:after {
-    content: '';
-    background: #FFF;
-    height: 80%;
-    width: 3px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-  &:after {
-   transform: translate(-50%, -50%) rotate(45deg); 
-  }
+  transition: 0.4s 0.3s;
 }
 
-/* Bouton d'ouverture */
+.close:before,
+.close:after {
+  content: '';
+  background: #fff;
+  height: 80%;
+  width: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Open button */
 .open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient(-45deg, #2e9cb6, #2e9cb6);
   height: 45px;
   width: 200px;
   padding: 10px 20px;
@@ -152,45 +155,11 @@ h3 {
   visibility: hidden;
 }
 
-/* Bouton d'ouverture actif */
 .open.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* Effet de survol du bouton d'ouverture */
 .open:hover {
-  box-shadow: 0 5px 15px rgba(#000, .3);
+  box-shadow: 0 5px 15px rgba(#000, 0.3);
 }
-
-body {
-  background: lighten(#474747, 10%) url(https://i.imgur.com/Zz4k6aM.jpeg) center/cover no-repeat;
-  height: 100vh;
-  overflow: hidden;
-  color: #FFF;
-  font-family: Roboto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-container {
-  position: absolute;
-  top: 30px;
-}
-
-.logo {
-  width: 200px;
-  height: auto;
-}
-
-.modal {
-  height: 470px;
-  width: 650px;
-  margin: auto;
-  box-shadow: 0 15px 35px rgba(#000, .5);
-  position: relative;
-}
-
-/* Styles pour le formulaire et le reste restent inchangés */
