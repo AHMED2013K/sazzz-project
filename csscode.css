@@ -28,9 +28,6 @@ body {
   margin: auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   position: relative;
-  overflow: hidden;
-  transform: translateX(-100%);
-  animation: slide-in 0.5s ease forwards;
 }
 
 /* Form and invite */
@@ -42,13 +39,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  transition: 0.5s ease-in-out;
 }
 
 /* Input */
 input {
   background: rgba(255, 255, 255, 0.15);
-  width: calc(100% - 16px);
+  width: 100%;
   padding: 8px;
   margin: 15px 0;
   border: none;
@@ -166,14 +162,4 @@ h3 {
 
 .open:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Animation */
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
 }
