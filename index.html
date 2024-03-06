@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Abroad Zone</title>
     <link rel="stylesheet" href="csscode.css">
+    <link rel="preload" href="https://i.imgur.com/Zz4k6aM.jpeg" as="image">
     <script src="codejs.js" defer></script>
 </head>
 <body>
@@ -19,12 +20,12 @@
   <div id="myModal" class="modal">
     <div class="form">
       <form id="myForm" onsubmit="submitForm(event)">
-        <label for="name">Full Name</label>
-        <input id="name" type="text" required>
-        <label for="email">Email Address</label>
-        <input id="email" type="email" required>
-        <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" required>
+        <label for="name" required>Full Name</label>
+        <input id="name" type="text">
+        <label for="email" required>Email Address</label>
+        <input id="email" type="email">
+        <label for="phone" required>Phone Number</label>
+        <input id="phone" type="tel">
         <label for="country">Country of Residence</label>
         <input id="country" type="text">
         <button type="submit">Submit your Application</button>
