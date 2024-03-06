@@ -8,7 +8,7 @@
 }
 
 body {
-  background: lighten(#474747, 10%) url(https://i.imgur.com/Zz4k6aM.jpeg) center/cover no-repeat;
+  background: url(https://i.imgur.com/Zz4k6aM.jpeg) center/cover no-repeat;
   height: 100vh;
   overflow: hidden;
   color: #fff;
