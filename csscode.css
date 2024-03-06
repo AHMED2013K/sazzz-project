@@ -28,6 +28,8 @@ body {
   margin: auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   position: relative;
+  left: -100%; /* Initial position off-screen to the left */
+  transition: left 0.5s ease-in-out; /* Smooth transition */
 }
 
 /* Form and invite */
