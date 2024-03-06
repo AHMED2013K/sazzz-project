@@ -38,6 +38,12 @@ body {
   padding: 25px;
   position: absolute;
   top: 0;
+  left: -50%; /* Slide the form out of view initially */
+  transition: left 0.5s ease-in-out; /* Add transition for smooth animation */
+}
+
+/* Slide the form into view when active class is added */
+.form.active {
   left: 0;
 }
 
