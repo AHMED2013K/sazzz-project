@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Abroad Zone</title>
     <link rel="stylesheet" href="csscode.css">
+    <style>
+        /* Ajoutez ici votre CSS personnalisé pour le formulaire */
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
   <!-- Conteneur du logo -->
@@ -35,8 +41,8 @@
     </div>
   </div>
 
-  <!-- Google Forms iframe -->
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0" style="display:none;">Chargement…</iframe>
+  <!-- Google Forms iframe (caché par défaut) -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0" class="hidden">Chargement…</iframe>
 
   <!-- JavaScript code -->
   <script>
@@ -58,10 +64,10 @@
     // Function pour afficher le formulaire Google Forms
     function toggleModal() {
       var iframe = document.querySelector("iframe");
-      iframe.style.display = "block";
+      iframe.classList.toggle("hidden");
   
       var modal = document.getElementById("myModal");
-      modal.style.display = "none";
+      modal.classList.toggle("hidden");
     }
   </script>
 </body>
