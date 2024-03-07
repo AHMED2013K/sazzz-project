@@ -22,7 +22,7 @@ function submitApplication(event) {
       if (xhr.status === 200) {
         console.log('Form submitted successfully');
         // Afficher un message de confirmation si nécessaire
-        alert('Application submitted successfully!');
+        alert('Form submitted successfully!');
         // Fermer la modal après soumission du formulaire
         toggleModal();
       } else {
