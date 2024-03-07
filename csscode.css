@@ -29,22 +29,7 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   position: relative;
   animation: slideIn 0.5s forwards;
-  display: none; /* Hide modal by default */
-}
-
-.modal.active {
-  display: block; /* Show modal when active class is present */
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
+  display: block; /* Afficher le modal par défaut */
 }
 
 /* Form and invite */
@@ -150,33 +135,4 @@ h3 {
 
 .close:after {
   transform: translate(-50%, -50%) rotate(45deg);
-}
-
-/* Open button */
-.open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  height: 45px;
-  width: 200px;
-  padding: 10px 20px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.open.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
