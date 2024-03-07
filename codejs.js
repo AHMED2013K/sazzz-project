@@ -1,25 +1,25 @@
-// Function to toggle modal and apply animation
+// Fonction pour afficher le modal et appliquer l'animation
 function toggleModal() {
   var modal = document.getElementById("myModal");
-  modal.classList.toggle("active");
+  modal.classList.add("active");
 }
 
-// Function to submit the form
+// Fonction pour soumettre le formulaire
 function submitForm(event) {
   event.preventDefault();
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
-  // Convert form data to JSON object
+  // Convertir les données du formulaire en objet JSON
   var jsonObject = {};
   formData.forEach(function(value, key) {
     jsonObject[key] = value;
   });
 
-  // Replace '{ID_DEPLOIEMENT}' with your deployment ID
+  // Remplacer 'https://api.example.com/sheets' par l'URL de déploiement
   var url = 'https://script.google.com/macros/s/AKfycbzDEP78QP8vhZWNEHimoSzlwACkLZe-rosQHEE5uM8O0OgelI8DtWZRn6zsmRGRZrAD/exec';
 
-  // Send JSON data to Google Sheets
+  // Envoyer les données JSON à Google Sheets
   fetch(url, {
     method: 'POST',
     headers: {
@@ -29,17 +29,22 @@ function submitForm(event) {
   })
   .then(response => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('La réponse du réseau n\'était pas valide');
     }
-    // Show a confirmation message
-    alert('Application submitted successfully!');
-    // Wait for 2 seconds before closing the modal
+    // Afficher un message de confirmation
+    alert('Formulaire soumis avec succès!');
+    // Attendre 2 secondes avant de fermer le modal
     setTimeout(function() {
-      toggleModal(); // Close modal after form submission
+      toggleModal(); // Fermer le modal après la soumission du formulaire
     }, 2000);
   })
   .catch(error => {
-    console.error('There was an error!', error);
-    alert('Failed to submit application. Please try again later.');
+    console.error('Une erreur s\'est produite!', error);
+    alert('Échec de la soumission du formulaire. Veuillez réessayer plus tard.');
   });
+}
+
+// Appeler la fonction toggleModal() dès que la page est chargée
+window.onload = function() {
+  toggleModal();
 }
