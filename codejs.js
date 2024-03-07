@@ -22,7 +22,7 @@ function submitApplication(event) {
       console.log('Response:', xhr.responseText);
 
       // Vérifier si la soumission a réussi
-      if (xhr.status === 200) {
+      if (xhr.status >= 200 && xhr.status < 300) {
         console.log('Form submitted successfully');
         // Afficher un message de confirmation si nécessaire
         alert('Form submitted successfully!');
