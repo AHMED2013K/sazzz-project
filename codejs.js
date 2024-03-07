@@ -26,9 +26,7 @@ function submitApplication(event) {
       if (xhr.status >= 200 && xhr.status < 300) {
         console.log('Form submitted successfully');
         // Afficher un message de confirmation si nécessaire
-        alert('Form submitted successfully!');
-        // Fermer la modal après soumission du formulaire
-        toggleModal();
+        showModal();
       } else {
         console.error('Error submitting application:', xhr.statusText);
         alert('Failed to submit application. Please try again later.');
@@ -41,4 +39,20 @@ function submitApplication(event) {
 
   // Envoyer la requête avec les données du formulaire
   xhr.send(formDataQueryString);
+}
+
+// Function to toggle modal and apply animation
+function toggleModal() {
+  var modal = document.getElementById("myModal");
+  modal.classList.toggle("active");
+
+  // Add animation class
+  modal.classList.toggle("slide-in");
+}
+
+// Function to show modal after successful form submission
+function showModal() {
+  var successMessage = "Form submitted successfully! We will contact you very soon via WhatsApp and email.";
+  alert(successMessage);
+  toggleModal(); // Close modal
 }
