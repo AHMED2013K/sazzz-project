@@ -4,52 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
-    <style>
-        /* Votre code CSS ici */
-        /* General styles */
-        *,
-        *:before,
-        *:after {
-          box-sizing: border-box;
-          margin: 0;
-          transition: .4s;
-        }
-        
-        body {
-          background-image: url("https://i.imgur.com/Zz4k6aM.jpeg");
-          background-position: center;
-          background-size: cover;
-          height: 100vh;
-          overflow: hidden;
-          color: #FFF;
-          font-family: Roboto;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        /* Autres styles CSS */
-        /* ... */
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <!-- Votre contenu HTML ici -->
-    <form id="myForm">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="phone">Téléphone :</label>
-        <input type="text" id="phone" name="phone" required><br><br>
-        <label for="country">Pays :</label>
-        <input type="text" id="country" name="country"><br><br>
-        <button type="button" onclick="submitForm()">Envoyer</button>
-    </form>
+    <div class="background-image">
+        <!-- Votre contenu de formulaire ici -->
+        <form id="myForm">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Téléphone :</label>
+            <input type="text" id="phone" name="phone" required><br><br>
+            <label for="country">Pays :</label>
+            <input type="text" id="country" name="country"><br><br>
+            <button type="button" onclick="submitForm()">Envoyer</button>
+        </form>
+    </div>
 
-    <script>
-        // Votre code JavaScript ici
-    </script>
+    <div id="myModal" class="modal">
+        <div class="form">
+            <span class="close">×</span>
+            <h3>Formulaire soumis avec succès !</h3>
+        </div>
+        <div class="invite">
+            <span class="close">×</span>
+            <h3>Veuillez remplir le formulaire</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
