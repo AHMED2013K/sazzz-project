@@ -4,13 +4,22 @@ function submitForm(event) {
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
-  // Replace 'https://script.google.com/macros/s/AKfycbzDEP78QP8vhZWNEHimoSzlwACkLZe-rosQHEE5uM8O0OgelI8DtWZRn6zsmRGRZrAD/exec' with your actual deployment URL
-  var url = 'https://script.google.com/macros/s/AKfycbzDEP78QP8vhZWNEHimoSzlwACkLZe-rosQHEE5uM8O0OgelI8DtWZRn6zsmRGRZrAD/exec';
+  // Convert form data to JSON object
+  var jsonObject = {};
+  formData.forEach(function(value, key) {
+    jsonObject[key] = value;
+  });
 
-  // Send form data to Google Sheets
+  // Nouveau lien de déploiement du service web
+  var url = 'https://script.google.com/macros/s/AKfycbyPf-aNotFliYRlVdtAwuSOZSEag1BTjFeJlhPhDbzO064PZ0eQjSXQ8Ke7Hmyy1oYrlw/exec';
+
+  // Send JSON data to Google Sheets
   fetch(url, {
     method: 'POST',
-    body: formData,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(jsonObject),
   })
   .then(response => {
     if (!response.ok) {
