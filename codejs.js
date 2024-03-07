@@ -1,3 +1,9 @@
+// Function to toggle modal and apply animation
+function toggleModal() {
+  var modal = document.getElementById("myModal");
+  modal.classList.toggle("active");
+}
+
 // Function to submit the form
 function submitForm(event) {
   event.preventDefault();
@@ -25,9 +31,9 @@ function submitForm(event) {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    // Afficher un message de confirmation
+    // Show a confirmation message
     alert('Application submitted successfully!');
-    // Attendre 2 secondes avant de fermer la modal
+    // Wait for 2 seconds before closing the modal
     setTimeout(function() {
       toggleModal(); // Close modal after form submission
     }, 2000);
