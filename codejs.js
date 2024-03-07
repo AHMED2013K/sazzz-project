@@ -25,7 +25,7 @@ function submitForm(event) {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    console.log('Application submitted successfully!'); // Changed from alert to console.log
+    alert('Application submitted successfully!');
     toggleModal(); // Close modal after form submission
   })
   .catch(error => {
