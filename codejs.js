@@ -1,3 +1,9 @@
+// Fonction pour afficher le modal et appliquer l'animation
+function toggleModal() {
+  var modal = document.getElementById("myModal");
+  modal.classList.add("active");
+}
+
 // Fonction pour soumettre le formulaire
 function submitForm(event) {
   event.preventDefault();
@@ -38,7 +44,7 @@ function submitForm(event) {
   });
 }
 
-// Appeler la fonction submitForm() dès que la page est chargée
+// Appeler la fonction toggleModal() dès que la page est chargée
 window.onload = function() {
-  submitForm(event);
+  toggleModal();
 }
