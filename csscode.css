@@ -29,6 +29,11 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   position: relative;
   animation: slideIn 0.5s forwards;
+  display: none; /* Hide modal by default */
+}
+
+.modal.active {
+  display: block; /* Show modal when active class is present */
 }
 
 @keyframes slideIn {
