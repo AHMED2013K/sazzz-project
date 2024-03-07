@@ -36,23 +36,32 @@
   </div>
 
   <!-- Google Forms iframe -->
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0" style="display:none;">Chargement…</iframe>
 
   <!-- JavaScript code -->
   <script>
-    // Function pour soumettre le formulaire (facultatif car les données seront envoyées directement au Google Forms)
+    // Function pour soumettre le formulaire
     function submitForm(event) {
       event.preventDefault();
-      // Aucune action requise car les données seront envoyées directement au Google Forms
+      var form = document.getElementById("myForm");
+      var formData = new FormData(form);
+  
+      // Convertir les données du formulaire en objet JSON
+      var jsonObject = {};
+      formData.forEach(function(value, key) {
+        jsonObject[key] = value;
+      });
+  
+      // Envoyer les données du formulaire au Google Forms (non nécessaire pour ce script)
     }
-
-    // Function to toggle modal and apply animation
+  
+    // Function pour afficher le formulaire Google Forms
     function toggleModal() {
+      var iframe = document.querySelector("iframe");
+      iframe.style.display = "block";
+  
       var modal = document.getElementById("myModal");
-      modal.classList.toggle("active");
-
-      // Add animation class
-      modal.classList.toggle("slide-in");
+      modal.style.display = "none";
     }
   </script>
 </body>
