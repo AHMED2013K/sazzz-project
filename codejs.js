@@ -27,6 +27,7 @@ function submitApplication(event) {
         toggleModal();
       } else {
         console.error('Error submitting application:', xhr.statusText);
+        console.log('Response:', xhr.responseText); // Ajout pour journaliser la réponse
         alert('Failed to submit application. Please try again later.');
       }
     }
