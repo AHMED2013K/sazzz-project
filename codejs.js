@@ -16,7 +16,7 @@ function submitForm(event) {
     jsonObject[key] = value;
   });
 
-  // Replace 'https://api.example.com/sheets' with deployment URL
+  // Replace '{ID_DEPLOIEMENT}' with your deployment ID
   var url = 'https://script.google.com/macros/s/AKfycbzDEP78QP8vhZWNEHimoSzlwACkLZe-rosQHEE5uM8O0OgelI8DtWZRn6zsmRGRZrAD/exec';
 
   // Send JSON data to Google Sheets
