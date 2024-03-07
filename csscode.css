@@ -4,168 +4,108 @@
 *:after {
   box-sizing: border-box;
   margin: 0;
-  transition: .4s;
+  padding: 0;
 }
 
 body {
-  background-image: url("https://i.imgur.com/Zz4k6aM.jpeg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  overflow: hidden;
-  color: #FFF;
-  font-family: Roboto;
-  display: flex;
-  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.modal {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
 
-/* Modal */
-.modal {
-  height: auto;
-  width: 650px;
-  margin: auto;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  position: relative;
-  animation: slideIn 0.5s forwards;
+.modal.active {
+  display: flex;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
 }
 
-/* Form and invite */
-.form, .invite {
-  background: rgba(71, 71, 71, 0.8);
-  width: 100%;
-  padding: 25px;
-  position: relative;
+.form label,
+.form input,
+.form button {
+  display: block;
+  margin-bottom: 10px;
 }
 
-/* Input */
-input {
-  background: rgba(255, 255, 255, 0.15);
+.form input {
   width: calc(100% - 20px);
-  padding: 8px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  color: #FFF;
-  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* Label */
-label {
-  font: 500 14px Roboto;
-  color: #2E9CB6;
-}
-
-/* Button */
-button {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  padding: 10px 20px;
+.form button {
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 21px;
-  outline: none;
-  overflow: hidden;
-  position: relative;
-  bottom: 0;
-  color: #FFF;
-  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
 }
 
-button:hover:before {
-  left: 110%;
-  transition: .3s;
+.form button:hover {
+  background-color: #0056b3;
 }
 
-button:before {
-  content: '';
-  background: rgba(255, 255, 255, 0.3);
-  height: 100%;
-  width: 65px;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  transform: skew(-45deg);
-  transition: 0s;
-}
-
-/* Invite */
 .invite {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
 }
 
-/* Title */
-h3 {
-  font: 30px Roboto;
-  text-transform: uppercase;
+.invite h3 {
+  margin-bottom: 10px;
 }
 
-/* Close button */
 .close {
-  background: #474747;
-  height: 30px;
-  width: 30px;
-  border: 3px solid #FFF;
-  border-radius: 50%;
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
-  transition: .4s .3s;
 }
 
-.close:before, .close:after {
+.close:before,
+.close:after {
   content: '';
-  background: #FFF;
-  height: 80%;
-  width: 3px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 2px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.close:before {
+  transform: rotate(45deg);
 }
 
 .close:after {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-/* Open button */
-.open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  height: 45px;
-  width: 200px;
-  padding: 10px 20px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.open.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: rotate(-45deg);
 }
