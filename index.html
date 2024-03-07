@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Abroad Zone</title>
     <link rel="stylesheet" href="csscode.css">
+    <style>
+      /* Style de la modal */
+      .modal {
+        display: none; /* Masquer par défaut */
+        position: fixed; /* Positionnement fixe */
+        z-index: 1; /* Priorité */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5); /* Couleur de fond semi-transparente */
+      }
+
+      /* Style du contenu de la modal */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* Centrer verticalement et horizontalement */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      /* Style du bouton de fermeture */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
 </head>
 <body>
   <!-- Conteneur du logo -->
@@ -16,30 +56,45 @@
   <!-- Modal -->
   <button class="open" onclick="toggleModal()">Open Modal</button>
   <div id="myModal" class="modal">
-    <div class="form">
-      <form id="myForm" onsubmit="submitApplication(event)">
-        <label for="fullName">Full Name</label>
-        <input id="fullName" type="text" name="entry.1811773666" required>
-        
-        <label for="email">Email Address</label>
-        <input id="email" type="email" name="entry.399873434" required>
-        
-        <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" name="entry.1162317101" required>
-        
-        <label for="country">Country of Residence</label>
-        <input id="country" type="text" name="entry.1849621618">
-        
-        <button type="submit">Submit your Application</button>
-      </form>
+    <!-- Contenu de la modal -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>Form submitted successfully! We will contact you very soon via WhatsApp and email</p>
     </div>
-    <div class="invite">
-      <h3>70% Scholarship opportunity in Cyprus</h3>
-      <div class="close" title="close"></div>
-    </div>
+  </div>
+
+  <div class="form">
+    <form id="myForm" onsubmit="submitApplication(event)">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text" name="entry.1811773666" required>
+      
+      <label for="email">Email Address</label>
+      <input id="email" type="email" name="entry.399873434" required>
+      
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" name="entry.1162317101" required>
+      
+      <label for="country">Country of Residence</label>
+      <input id="country" type="text" name="entry.1849621618">
+      
+      <button type="submit">Submit your Application</button>
+    </form>
   </div>
 
   <!-- Script JavaScript -->
   <script src="codejs.js" defer></script>
+  <script>
+    // Fonction pour ouvrir la modal
+    function openModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    // Fonction pour fermer la modal
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>
