@@ -17,7 +17,7 @@ function submitForm(event) {
   });
 
   // Remplacer 'https://api.example.com/sheets' par l'URL de déploiement
-  var url = 'https://script.google.com/macros/s/AKfycbzDEP78QP8vhZWNEHimoSzlwACkLZe-rosQHEE5uM8O0OgelI8DtWZRn6zsmRGRZrAD/exec';
+  var url = 'https://script.google.com/macros/s/1cy6NOhtjyAQn7a69_IFziNp2RN2autPmZrTcHGcxvhwFxpUgaNy-Zaef/exec';
 
   // Envoyer les données JSON à Google Sheets
   fetch(url, {
