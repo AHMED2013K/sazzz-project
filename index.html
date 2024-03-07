@@ -17,8 +17,17 @@
   <button class="open" onclick="toggleModal()">Open Modal</button>
   <div id="myModal" class="modal">
     <div class="form">
-      <!-- Intégration du formulaire Google Forms -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+      <form id="myForm" onsubmit="submitForm(event)">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" required>
+        <label for="email">Email Address</label>
+        <input id="email" type="email" required>
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" required>
+        <label for="country">Country of Residence</label>
+        <input id="country" type="text">
+        <button type="submit">Submit your Application</button>
+      </form>
     </div>
     <div class="invite">
       <h3>70% Scholarship opportunity in Cyprus</h3>
@@ -26,6 +35,25 @@
     </div>
   </div>
 
-  <script src="codejs.js" defer></script>
+  <!-- Google Forms iframe -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+
+  <!-- JavaScript code -->
+  <script>
+    // Function pour soumettre le formulaire (facultatif car les données seront envoyées directement au Google Forms)
+    function submitForm(event) {
+      event.preventDefault();
+      // Aucune action requise car les données seront envoyées directement au Google Forms
+    }
+
+    // Function to toggle modal and apply animation
+    function toggleModal() {
+      var modal = document.getElementById("myModal");
+      modal.classList.toggle("active");
+
+      // Add animation class
+      modal.classList.toggle("slide-in");
+    }
+  </script>
 </body>
 </html>
