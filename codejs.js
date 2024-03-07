@@ -7,6 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyCCv2N0CAWq5VXgM1NcERA2Mb0If271eJQ",
   authDomain: "sazz-b61a4.firebaseapp.com",
   projectId: "sazz-b61a4",
+  databaseURL: "https://sazz-b61a4-default-rtdb.europe-west1.firebasedatabase.app",
   storageBucket: "sazz-b61a4.appspot.com",
   messagingSenderId: "84222743900",
   appId: "1:84222743900:web:4195bebaa9a888e86f9d99",
