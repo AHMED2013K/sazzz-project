@@ -44,6 +44,9 @@ function submitForm(event) {
   });
 }
 
+// Appeler la fonction submitForm() lorsque le formulaire est soumis
+document.getElementById("myForm").addEventListener("submit", submitForm);
+
 // Appeler la fonction toggleModal() dès que la page est chargée
 window.onload = function() {
   toggleModal();
