@@ -1,16 +1,7 @@
-// Function pour soumettre le formulaire
-function submitForm(event) {
-  event.preventDefault();
-  var form = document.getElementById("myForm");
-  var formData = new FormData(form);
-
-  // Convertir les données du formulaire en objet JSON
-  var jsonObject = {};
-  formData.forEach(function(value, key) {
-    jsonObject[key] = value;
-  });
-
-  // Envoi des données du formulaire au Google Forms (pas nécessaire pour le script Google Apps Script)
+// Function to submit the application
+function submitApplication() {
+  // Rediriger l'utilisateur vers le formulaire Google Forms
+  window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/viewform';
 }
 
 // Function to toggle modal and apply animation
