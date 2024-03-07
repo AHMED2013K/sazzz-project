@@ -17,16 +17,20 @@
   <button class="open" onclick="toggleModal()">Open Modal</button>
   <div id="myModal" class="modal">
     <div class="form">
-      <form id="myForm">
-        <label for="name">Full Name</label>
-        <input id="name" type="text" required>
+      <form id="myForm" onsubmit="submitForm(event)">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" type="text" name="entry.1234567890" required>
+        
         <label for="email">Email Address</label>
-        <input id="email" type="email" required>
+        <input id="email" type="email" name="entry.2345678901" required>
+        
         <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" required>
+        <input id="phone" type="tel" name="entry.3456789012" required>
+        
         <label for="country">Country of Residence</label>
-        <input id="country" type="text">
-        <button type="button" onclick="submitApplication()">Submit your Application</button>
+        <input id="country" type="text" name="entry.4567890123">
+        
+        <button type="submit">Submit your Application</button>
       </form>
     </div>
     <div class="invite">
@@ -35,6 +39,7 @@
     </div>
   </div>
 
+  <!-- Script JavaScript -->
   <script src="codejs.js" defer></script>
 </body>
 </html>
