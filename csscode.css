@@ -23,19 +23,39 @@ body {
 
 /* Modal */
 .modal {
-  display: none; /* Hide the modal by default */
+  display: block; /* Afficher le modal */
+  height: 470px;
+  width: 650px;
+  margin: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
 /* Form and invite */
 .form, .invite {
   background: rgba(71, 71, 71, 0.8);
-  width: 50%;
+  width: 100%; /* Changer la largeur à 100% pour remplir le modal */
   height: 100%;
   padding: 25px;
   position: absolute;
   top: 0;
   left: 0;
-  display: none; /* Hide the form and invite by default */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrer le contenu horizontalement */
+  justify-content: center; /* Centrer le contenu verticalement */
 }
 
 /* Input */
@@ -129,29 +149,5 @@ h3 {
 
 /* Open button */
 .open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  height: 45px;
-  width: 200px;
-  padding: 10px 20px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  opacity: 1; /* Display the open button */
-  visibility: visible;
-}
-
-.open.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: none; /* Masquer le bouton "open modal" */
 }
