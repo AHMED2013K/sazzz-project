@@ -10,12 +10,9 @@ function submitApplication(event) {
     jsonObject[key] = value;
   });
 
-  // Afficher les données dans la console pour vérification
-  console.log("Form data:", jsonObject);
-
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://script.google.com/macros/s/AKfycbz6pzCL83lNkXHpp7FhlwDqlscx4EaIMLi-Gw5lWwanMFjQAEvIYypt1W9iMpgtqbmMdg/exec', true); // Remplacez par le nouvel URL de déploiement
+  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', true);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Gérer la réponse
@@ -41,4 +38,10 @@ function submitApplication(event) {
 
   // Envoyer la requête avec les données du formulaire
   xhr.send(formDataQueryString);
+}
+
+// Function to toggle modal
+function toggleModal() {
+  var modal = document.getElementById("myModal");
+  modal.classList.toggle("active");
 }
