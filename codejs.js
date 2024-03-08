@@ -4,20 +4,6 @@ function doGet(e) {
 }
 
 function doPost(e) {
-  return handleResponse();
-}
-
-function handleResponse() {
-  var response = ContentService.createTextOutput().setMimeType(ContentService.MimeType.JSON);
-  response.setHeaders({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
-  });
-  return response;
-}
-
-function doPost(e) {
   try {
     var parameters = e.parameter;
 
@@ -35,4 +21,14 @@ function doPost(e) {
     console.error(error);
     return ContentService.createTextOutput('Error').setMimeType(ContentService.MimeType.TEXT);
   }
+}
+
+function handleResponse() {
+  var response = ContentService.createTextOutput().setMimeType(ContentService.MimeType.JSON);
+  response.setHeaders({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  });
+  return response;
 }
