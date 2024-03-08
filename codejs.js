@@ -4,7 +4,7 @@ function submitApplication(event) {
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
-  // Convertir les données du formulaire en objet JSON
+  // Convertir les données du formulaire en format JSON
   var jsonObject = {};
   formData.forEach(function(value, key) {
     jsonObject[key] = value;
