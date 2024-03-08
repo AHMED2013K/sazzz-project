@@ -12,15 +12,21 @@ function submitApplication(event) {
 
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.open('POST', '/submit-form', true); // Endpoint sur ton propre serveur
+  xhr.setRequestHeader('Content-Type', 'application/json');
 
   // Gérer la réponse
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status >= 200 && xhr.status < 300) {
-        console.log('Form submitted successfully');
-        toggleModal(); // Ferme la fenêtre modale uniquement si le formulaire est soumis avec succès
+        var response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          console.log('Form submitted successfully');
+          toggleModal(); // Ferme la fenêtre modale uniquement si le formulaire est soumis avec succès
+        } else {
+          console.error('Error submitting application:', response.error);
+          alert('Failed to submit application. Please try again later.'); // Affiche une alerte uniquement en cas d'échec de soumission du formulaire
+        }
       } else {
         console.error('Error submitting application:', xhr.statusText);
         alert('Failed to submit application. Please try again later.'); // Affiche une alerte uniquement en cas d'échec de soumission du formulaire
@@ -28,11 +34,11 @@ function submitApplication(event) {
     }
   };
 
-  // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(jsonObject).toString();
+  // Convertir les données du formulaire en format JSON
+  var formDataJSON = JSON.stringify(jsonObject);
 
   // Envoyer la requête avec les données du formulaire
-  xhr.send(formDataQueryString);
+  xhr.send(formDataJSON);
 }
 
 // Function to toggle modal
