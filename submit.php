@@ -1,13 +1,24 @@
 <?php
-// Récupérer les données du formulaire
-$fullName = $_POST['fullName'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$country = $_POST['country'];
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $fullName = $_POST['fullName'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $country = $_POST['country'];
 
-// Traiter les données ou les enregistrer dans une base de données, etc.
+    // Validate and sanitize form data (you should add more robust validation)
+    $fullName = htmlspecialchars($fullName);
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    // Additional validation and sanitization for other fields...
 
-// Répondre à la requête AJAX
-$response = array('success' => true);
-echo json_encode($response);
+    // Process form data (e.g., store in a database, send email)
+    // Your code here...
+
+    // Send response back to user
+    echo "Form submitted successfully!";
+} else {
+    // If form is not submitted, redirect to form page or show error message
+    echo "Error: Form not submitted!";
+}
 ?>
