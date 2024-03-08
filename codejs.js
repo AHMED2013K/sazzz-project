@@ -43,5 +43,7 @@ function submitApplication(event) {
 // Function to toggle modal
 function toggleModal() {
   var modal = document.getElementById("myModal");
-  modal.classList.toggle("active");
+  if (modal) {
+    modal.style.display = (modal.style.display === "none") ? "block" : "none";
+  }
 }
