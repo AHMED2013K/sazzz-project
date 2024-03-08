@@ -4,12 +4,6 @@ function submitApplication(event) {
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
-  // Convertir les données du formulaire en objet JSON
-  var jsonObject = {};
-  formData.forEach(function(value, key) {
-    jsonObject[key] = value;
-  });
-
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://script.google.com/macros/s/AKfycbz6pzCL83lNkXHpp7FhlwDqlscx4EaIMLi-Gw5lWwanMFjQAEvIYypt1W9iMpgtqbmMdg/exec', true); // Remplacez par le nouvel URL de déploiement
@@ -34,7 +28,7 @@ function submitApplication(event) {
   };
 
   // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(jsonObject).toString();
+  var formDataQueryString = new URLSearchParams(formData).toString();
 
   // Envoyer la requête avec les données du formulaire
   xhr.send(formDataQueryString);
