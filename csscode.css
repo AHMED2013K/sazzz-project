@@ -23,7 +23,6 @@ body {
 
 /* Modal */
 .modal {
-  display: block; /* Afficher le modal */
   height: 470px;
   width: 650px;
   margin: auto;
@@ -43,19 +42,18 @@ body {
   }
 }
 
-/* Form */
-.form {
+/* Form and invite */
+.form, .invite {
   background: rgba(71, 71, 71, 0.8);
-  width: 70%; /* Changer la largeur à 70% */
+  width: 50%;
   height: 100%;
   padding: 25px;
   position: absolute;
   top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrer le contenu horizontalement */
-  justify-content: center; /* Centrer le contenu verticalement */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Input */
@@ -88,7 +86,7 @@ button {
   color: #FFF;
   font-size: 18px;
   cursor: pointer;
-  margin-top: 15px; /* Ajout de marge en haut */
+  margin-top: 15px;
 }
 
 button:hover:before {
@@ -111,16 +109,7 @@ button:before {
 /* Invite */
 .invite {
   background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  width: 30%; /* Changer la largeur à 30% */
-  height: 100%;
-  position: absolute;
-  top: 0;
   right: 0;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrer le contenu horizontalement */
-  justify-content: center; /* Centrer le contenu verticalement */
 }
 
 /* Title */
@@ -160,5 +149,29 @@ h3 {
 
 /* Open button */
 .open {
-  display: none; /* Masquer le bouton "open modal" */
+  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+  height: 45px;
+  width: 200px;
+  padding: 10px 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.open.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.open:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
