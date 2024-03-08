@@ -7,7 +7,6 @@ function submitApplication(event) {
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'submit.php', true); // Chemin vers le fichier PHP
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Gérer la réponse
   xhr.onreadystatechange = function() {
