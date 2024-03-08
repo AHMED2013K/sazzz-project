@@ -4,15 +4,9 @@ function submitApplication(event) {
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
-  // Convertir les données du formulaire en format JSON
-  var jsonObject = {};
-  formData.forEach(function(value, key) {
-    jsonObject[key] = value;
-  });
-
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', true);
+  xhr.open('POST', 'submit.php', true); // Chemin vers le fichier PHP
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Gérer la réponse
@@ -33,11 +27,8 @@ function submitApplication(event) {
     }
   };
 
-  // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(jsonObject).toString();
-
   // Envoyer la requête avec les données du formulaire
-  xhr.send(formDataQueryString);
+  xhr.send(formData);
 }
 
 // Function to toggle modal
