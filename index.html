@@ -14,27 +14,30 @@
   </div>
   
   <!-- Modal -->
-  <form id="myForm" action="submit.php" method="post" class="modal-form">
+  <button class="open" onclick="toggleModal()">Open Modal</button>
+  <div id="myModal" class="modal">
     <div class="form">
-      <label for="fullName">Full Name</label>
-      <input id="fullName" type="text" name="fullName" required>
-      
-      <label for="email">Email Address</label>
-      <input id="email" type="email" name="email" required>
-      
-      <label for="phone">Phone Number</label>
-      <input id="phone" type="tel" name="phone" required>
-      
-      <label for="country">Country of Residence</label>
-      <input id="country" type="text" name="country">
-      
-      <button type="submit">Submit your Application</button>
+      <form id="myForm" onsubmit="submitApplication(event)">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" type="text" name="fullName" required>
+        
+        <label for="email">Email Address</label>
+        <input id="email" type="email" name="email" required>
+        
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" name="phone" required>
+        
+        <label for="country">Country of Residence</label>
+        <input id="country" type="text" name="country">
+        
+        <button type="submit">Submit your Application</button>
+      </form>
     </div>
     <div class="invite">
       <h3>70% Scholarship opportunity in Cyprus</h3>
       <div class="close" title="close"></div>
     </div>
-  </form>
+  </div>
 
   <!-- Script JavaScript -->
   <script src="codejs.js" defer></script>
