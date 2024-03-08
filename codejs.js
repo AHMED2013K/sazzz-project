@@ -12,7 +12,7 @@ function submitApplication(event) {
 
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', true);
+  xhr.open('POST', 'https://script.google.com/macros/s/16alBVJtitn2xJJtcDUliMT4aU41C0ADhGkeZB9tERZnw9mbg7QuRlqwC/exec', true); // Remplacez par l'URL de votre script Google Apps Script
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Gérer la réponse
