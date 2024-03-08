@@ -1,24 +1,20 @@
 <?php
-// Check if form is submitted
+// Vérifier si la requête est de type POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $fullName = $_POST['fullName'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $country = $_POST['country'];
+    // Récupérer les données du formulaire
+    $fullName = $_POST['fullName'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $country = $_POST['country'] ?? '';
 
-    // Validate and sanitize form data (you should add more robust validation)
-    $fullName = htmlspecialchars($fullName);
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    // Additional validation and sanitization for other fields...
-
-    // Process form data (e.g., store in a database, send email)
-    // Your code here...
-
-    // Send response back to user
-    echo "Form submitted successfully!";
+    // Traiter les données ici (par exemple, les enregistrer dans une base de données, les envoyer par e-mail, etc.)
+    
+    // Répondre à la requête AJAX avec un message de succès
+    $response = array('success' => true, 'message' => 'Formulaire soumis avec succès !');
+    echo json_encode($response);
 } else {
-    // If form is not submitted, redirect to form page or show error message
-    echo "Error: Form not submitted!";
+    // Répondre à la requête AJAX avec une erreur si la méthode n'est pas POST
+    $response = array('success' => false, 'message' => 'Méthode de requête invalide !');
+    echo json_encode($response);
 }
 ?>
