@@ -10,11 +10,11 @@ function submitApplication(event) {
 
   // Gérer la réponse
   xhr.onreadystatechange = function() {
-    console.log('Ready state:', xhr.readyState);
-    console.log('Status:', xhr.status);
-    console.log('Response:', xhr.responseText);
-
     if (xhr.readyState === XMLHttpRequest.DONE) {
+      console.log('Ready state:', xhr.readyState);
+      console.log('Status:', xhr.status);
+      console.log('Response:', xhr.responseText);
+
       // Vérifier si la soumission a réussi
       if (xhr.status >= 200 && xhr.status < 300) {
         console.log('Form submitted successfully');
