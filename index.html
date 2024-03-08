@@ -40,54 +40,6 @@
   </div>
 
   <!-- Script JavaScript -->
-  <script>
-    // Function to submit the application
-    function submitApplication(event) {
-      event.preventDefault();
-      var form = document.getElementById("myForm");
-      var formData = new FormData(form);
-
-      // Convertir les données du formulaire en objet JSON
-      var jsonObject = {};
-      formData.forEach(function(value, key) {
-        jsonObject[key] = value;
-      });
-
-      // Créer une requête XMLHttpRequest
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://script.google.com/macros/s/16alBVJtitn2xJJtcDUliMT4aU41C0ADhGkeZB9tERZnw9mbg7QuRlqwC/exec', true); // Remplacez par l'URL de votre script Google Apps Script
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      // Gérer la réponse
-      xhr.onreadystatechange = function() {
-        console.log('Ready state:', xhr.readyState);
-        console.log('Status:', xhr.status);
-        console.log('Response:', xhr.responseText);
-
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          // Vérifier si la soumission a réussi
-          if (xhr.status >= 200 && xhr.status < 300) {
-            console.log('Form submitted successfully');
-            toggleModal();
-          } else {
-            console.error('Error submitting application:', xhr.statusText);
-            alert('Failed to submit application. Please try again later.');
-          }
-        }
-      };
-
-      // Convertir les données du formulaire en format query string
-      var formDataQueryString = new URLSearchParams(jsonObject).toString();
-
-      // Envoyer la requête avec les données du formulaire
-      xhr.send(formDataQueryString);
-    }
-
-    // Function to toggle modal
-    function toggleModal() {
-      var modal = document.getElementById("myModal");
-      modal.classList.toggle("active");
-    }
-  </script>
+  <script src="codejs.js" defer></script>
 </body>
 </html>
