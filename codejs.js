@@ -1,47 +1,87 @@
-// Function to submit the application
-function submitApplication(event) {
-  event.preventDefault();
-  var form = document.getElementById("myForm");
-  var formData = new FormData(form);
-
-  // Convertir les données du formulaire en objet JSON
-  var jsonObject = {};
-  formData.forEach(function(value, key) {
-    jsonObject[key] = value;
-  });
-
-  // Créer une requête XMLHttpRequest
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-  // Gérer la réponse
-  xhr.onreadystatechange = function() {
-    console.log('Ready state:', xhr.readyState);
-    console.log('Status:', xhr.status);
-    console.log('Response:', xhr.responseText);
-
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      // Vérifier si la soumission a réussi
-      if (xhr.status >= 200 && xhr.status < 300) {
-        console.log('Form submitted successfully');
-        toggleModal();
-      } else {
-        console.error('Error submitting application:', xhr.statusText);
-        alert('Failed to submit application. Please try again later.');
-      }
-    }
-  };
-
-  // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(jsonObject).toString();
-
-  // Envoyer la requête avec les données du formulaire
-  xhr.send(formDataQueryString);
+/* General styles */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-// Function to toggle modal
-function toggleModal() {
-  var modal = document.getElementById("myModal");
-  modal.classList.toggle("active");
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.modal {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.form label,
+.form input,
+.form button {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+.invite {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.invite h3 {
+  margin-bottom: 10px;
 }
