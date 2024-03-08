@@ -1,8 +1,6 @@
 // Function to submit the application
 function submitApplication(event) {
   event.preventDefault();
-  console.log('Submitting form...'); // Ajout d'un message de débogage
-
   var form = document.getElementById("myForm");
   var formData = new FormData(form);
 
