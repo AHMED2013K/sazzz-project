@@ -20,10 +20,10 @@ function submitApplication(event) {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status >= 200 && xhr.status < 300) {
         console.log('Form submitted successfully');
-        toggleModal();
+        toggleModal(); // Ferme la fenêtre modale uniquement si le formulaire est soumis avec succès
       } else {
         console.error('Error submitting application:', xhr.statusText);
-        alert('Failed to submit application. Please try again later.');
+        alert('Failed to submit application. Please try again later.'); // Affiche une alerte uniquement en cas d'échec de soumission du formulaire
       }
     }
   };
