@@ -12,8 +12,8 @@ function submitApplication(event) {
 
   // Créer une requête XMLHttpRequest
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwC5srLUIzLvhXblNM9vwVi7iUpwiEqxvQMN6jMT0lpveX4XwjMwFOLwbJzCvQZie7E-Q/exec', true); // Remplacez 'URL_DU_SERVICE_WEB' par cette URL
-  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Gérer la réponse
   xhr.onreadystatechange = function() {
@@ -28,11 +28,11 @@ function submitApplication(event) {
     }
   };
 
-  // Convertir les données du formulaire en chaîne JSON
-  var formDataJsonString = JSON.stringify(jsonObject);
+  // Convertir les données du formulaire en format query string
+  var formDataQueryString = new URLSearchParams(jsonObject).toString();
 
   // Envoyer la requête avec les données du formulaire
-  xhr.send(formDataJsonString);
+  xhr.send(formDataQueryString);
 }
 
 // Function to toggle modal
