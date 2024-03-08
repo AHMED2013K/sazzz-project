@@ -16,21 +16,20 @@ function submitApplication(event) {
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Gérer la réponse
-  xhr.onreadystatechange = function() {
-    console.log('Ready state:', xhr.readyState);
-    console.log('Status:', xhr.status);
-    console.log('Response:', xhr.responseText);
-
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      // Vérifier si la soumission a réussi
-      if (xhr.status >= 200 && xhr.status < 300) {
-        console.log('Form submitted successfully');
-        toggleModal();
-      } else {
-        console.error('Error submitting application:', xhr.statusText);
-        alert('Failed to submit application. Please try again later.');
-      }
+  xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      console.log('Form submitted successfully');
+      toggleModal();
+    } else {
+      console.error('Error submitting application:', xhr.statusText);
+      alert('Failed to submit application. Please try again later.');
     }
+  };
+
+  // Gérer les erreurs de réseau
+  xhr.onerror = function() {
+    console.error('Network error occurred');
+    alert('Failed to submit application due to network error. Please check your internet connection and try again.');
   };
 
   // Convertir les données du formulaire en format query string
@@ -38,12 +37,4 @@ function submitApplication(event) {
 
   // Envoyer la requête avec les données du formulaire
   xhr.send(formDataQueryString);
-}
-
-// Function to toggle modal
-function toggleModal() {
-  var modal = document.getElementById("myModal");
-  if (modal) {
-    modal.style.display = (modal.style.display === "none") ? "block" : "none";
-  }
 }
