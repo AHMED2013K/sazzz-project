@@ -1,4 +1,3 @@
-// Function to submit the application
 function submitApplication(event) {
   event.preventDefault();
   var form = document.getElementById("myForm");
@@ -38,10 +37,4 @@ function submitApplication(event) {
 
   // Envoyer la requête avec les données du formulaire
   xhr.send(formDataQueryString);
-}
-
-// Function to toggle modal
-function toggleModal() {
-  var modal = document.getElementById("myModal");
-  modal.classList.toggle("active");
 }
