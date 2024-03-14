@@ -21,6 +21,39 @@ body {
   align-items: center;
 }
 
+/* Adjustments for mobile */
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 90%; /* Adjust modal width for smaller screens */
+  }
+
+  .form, .invite {
+    width: 90%; /* Adjust form and invite width for smaller screens */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  input {
+    font-size: 16px; /* Decrease input font size for smaller screens */
+  }
+
+  h3 {
+    font-size: 24px; /* Decrease title font size for smaller screens */
+  }
+
+  .close {
+    top: -10px; /* Adjust close button position for smaller screens */
+    right: -10px; /* Adjust close button position for smaller screens */
+    height: 20px; /* Decrease close button size for smaller screens */
+    width: 20px; /* Decrease close button size for smaller screens */
+  }
+
+  .open {
+    height: 40px; /* Decrease open button height for smaller screens */
+    width: 160px; /* Decrease open button width for smaller screens */
+    font-size: 16px; /* Decrease open button font size for smaller screens */
+  }
+}
+
 /* Modal */
 .modal {
   height: 470px;
@@ -45,7 +78,6 @@ body {
 /* Form and invite */
 .form, .invite {
   background: rgba(71, 71, 71, 0.8);
-  width: 50%;
   height: 100%;
   padding: 25px;
   position: absolute;
@@ -176,21 +208,21 @@ h3 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Styles pour le logo dans le titre */
+/* Styles for the logo in the title */
 .logo-container {
   position: absolute;
-  top: 20px; /* Position verticale du logo */
+  top: 20px; /* Vertical position of the logo */
   left: 50%;
   transform: translateX(-50%);
 }
 
 .logo {
-  max-width: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
-  max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
+  max-width: 100%; /* Ensure the logo does not exceed its container */
+  max-height: 100%; /* Ensure the logo does not exceed its container */
 }
 
-/* Ajoutez cette classe pour définir la taille du logo dans le titre */
+/* Add this class to set the size of the logo in the title */
 .title-logo {
-  width: 200px; /* Largeur souhaitée */
-  height: auto; /* Hauteur automatique pour maintenir le ratio */
+  width: 200px; /* Desired width */
+  height: auto; /* Automatic height to maintain aspect ratio */
 }
