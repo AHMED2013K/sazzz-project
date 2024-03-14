@@ -42,7 +42,7 @@ body {
   }
 }
 
-/* Formand invite */
+/* Form and invite */
 .form, .invite {
   background: rgba(71, 71, 71, 0.8);
   width: 50%;
@@ -172,36 +172,25 @@ h3 {
   visibility: visible;
 }
 
-/* Logo Container */
+.open:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles pour le logo dans le titre */
 .logo-container {
   position: absolute;
-  top: 20px; /* Augmentez cette valeur pour déplacer le logo plus haut */
+  top: 20px; /* Position verticale du logo */
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Logo */
 .logo {
   max-width: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
   max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
 }
 
-/* Text animation */
-.text-anim {
-  overflow: hidden;
-  border-right: 0.25em solid #fff;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typing 2s steps(40, end) forwards;
-  letter-spacing: 0.15em;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+/* Ajoutez cette classe pour définir la taille du logo dans le titre */
+.title-logo {
+  width: 200px; /* Largeur souhaitée */
+  height: auto; /* Hauteur automatique pour maintenir le ratio */
 }
