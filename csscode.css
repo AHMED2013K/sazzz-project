@@ -179,9 +179,9 @@ h3 {
 /* Logo Container */
 .logo-container {
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  height: 100%; /* Ensure it takes the full height of the container */
+  justify-content: center; /* Horizontally center the logo */
+  align-items: flex-start; /* Align the logo to the top */
+  height: 100px; /* Define the height of the logo container */
 }
 
 /* Logo */
