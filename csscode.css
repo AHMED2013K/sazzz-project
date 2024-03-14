@@ -4,7 +4,7 @@
 *:after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  transition: .4s;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   height: 100vh;
   overflow: hidden;
   color: #FFF;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,9 +42,8 @@ body {
   }
 }
 
-/* Form and invite */
-.form,
-.invite {
+/* Formand invite */
+.form, .invite {
   background: rgba(71, 71, 71, 0.8);
   width: 50%;
   height: 100%;
@@ -57,7 +56,7 @@ body {
 /* Input */
 input {
   background: rgba(255, 255, 255, 0.15);
-  width: calc(100% - 16px);
+  width: 100%;
   padding: 8px;
   margin: 15px 0;
   border: none;
@@ -69,13 +68,13 @@ input {
 
 /* Label */
 label {
-  font: 500 14px Roboto, sans-serif;
+  font: 500 14px Roboto;
   color: #2E9CB6;
 }
 
 /* Button */
 button {
-  background: linear-gradient(-45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
   padding: 10px 20px;
   border: none;
   border-radius: 21px;
@@ -109,15 +108,14 @@ button:before {
 
 /* Invite */
 .invite {
-  background: linear-gradient(-45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
   left: 50%;
 }
 
 /* Title */
-.title {
-  font-size: 36px;
-  margin-left: -50px; /* Ajustez la marge gauche pour déplacer le texte vers la gauche */
-  text-align: center;
+h3 {
+  font: 30px Roboto;
+  text-transform: uppercase;
 }
 
 /* Close button */
@@ -134,8 +132,7 @@ button:before {
   transition: .4s .3s;
 }
 
-.close:before,
-.close:after {
+.close:before, .close:after {
   content: '';
   background: #FFF;
   height: 80%;
@@ -152,7 +149,7 @@ button:before {
 
 /* Open button */
 .open {
-  background: linear-gradient(-45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
   height: 45px;
   width: 200px;
   padding: 10px 20px;
@@ -175,22 +172,18 @@ button:before {
   visibility: visible;
 }
 
-.open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
 /* Logo Container */
 .logo-container {
   position: absolute;
-  top: 20px;
+  top: 20px; /* Augmentez cette valeur pour déplacer le logo plus haut */
   left: 50%;
   transform: translateX(-50%);
 }
 
 /* Logo */
 .logo {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
+  max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
 }
 
 /* Text animation */
@@ -199,5 +192,16 @@ button:before {
   border-right: 0.25em solid #fff;
   white-space: nowrap;
   margin: 0 auto;
+  animation: typing 2s steps(40, end) forwards;
+  letter-spacing: 0.15em;
   font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
