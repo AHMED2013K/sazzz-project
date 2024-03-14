@@ -175,3 +175,17 @@ h3 {
 .open:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100%; /* Ensure it takes the full height of the container */
+}
+
+/* Logo */
+.logo {
+  max-width: 100%; /* Ensure the logo doesn't exceed its container */
+  max-height: 100%; /* Ensure the logo doesn't exceed its container */
+}
