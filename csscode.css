@@ -19,12 +19,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Empêcher le défilement de la page */
+  padding: 0; /* Empêcher le défilement de la page */
 }
 
 /* Adjustments for mobile */
 @media screen and (max-width: 768px) {
   .modal {
     width: 90%; /* Adjust modal width for smaller screens */
+    max-width: 90%; /* Ensure modal does not exceed screen width */
   }
 
   .form, .invite {
@@ -56,8 +59,7 @@ body {
 
 /* Modal */
 .modal {
-  height: 470px;
-  width: 650px;
+  max-width: 650px; /* Ensure modal does not exceed a certain width */
   margin: auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -78,17 +80,18 @@ body {
 /* Form and invite */
 .form, .invite {
   background: rgba(71, 71, 71, 0.8);
-  height: 100%;
+  width: 90%; /* Adjust form and invite width */
   padding: 25px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%; /* Position form and invite at the center */
+  left: 50%; /* Position form and invite at the center */
+  transform: translate(-50%, -50%); /* Position form and invite at the center */
 }
 
 /* Input */
 input {
   background: rgba(255, 255, 255, 0.15);
-  width: 100%;
+  width: calc(100% - 16px); /* Adjust input width to accommodate padding */
   padding: 8px;
   margin: 15px 0;
   border: none;
@@ -115,10 +118,10 @@ button {
   position: absolute;
   bottom: 30px;
   left: 50%;
+  transform: translateX(-50%);
   color: #FFF;
   font-size: 18px;
   cursor: pointer;
-  transform: translateX(-50%);
 }
 
 button:hover:before {
@@ -141,7 +144,6 @@ button:before {
 /* Invite */
 .invite {
   background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  left: 50%;
 }
 
 /* Title */
