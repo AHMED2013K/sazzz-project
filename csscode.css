@@ -179,15 +179,15 @@ h3 {
 /* Logo Container */
 .logo-container {
   position: absolute;
-  top: 20px; /* Adjust the top position to move the logo higher */
+  top: 10px; /* Augmentez cette valeur pour déplacer le logo plus haut */
   left: 50%;
   transform: translateX(-50%);
 }
 
 /* Logo */
 .logo {
-  max-width: 100%; /* Ensure the logo doesn't exceed its container */
-  max-height: 100%; /* Ensure the logo doesn't exceed its container */
+  max-width: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
+  max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
 }
 
 
