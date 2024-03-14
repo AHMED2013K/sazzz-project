@@ -179,7 +179,7 @@ h3 {
 /* Logo Container */
 .logo-container {
   position: absolute;
-  top: 10px; /* Augmentez cette valeur pour déplacer le logo plus haut */
+  top: 20px; /* Augmentez cette valeur pour déplacer le logo plus haut */
   left: 50%;
   transform: translateX(-50%);
 }
