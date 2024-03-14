@@ -181,7 +181,7 @@ h3 {
   display: flex;
   justify-content: center; /* Horizontally center the logo */
   align-items: flex-start; /* Align the logo to the top */
-  height: 100px; /* Define the height of the logo container */
+  margin-top: 50px; /* Adjust the top margin as needed */
 }
 
 /* Logo */
@@ -189,3 +189,4 @@ h3 {
   max-width: 100%; /* Ensure the logo doesn't exceed its container */
   max-height: 100%; /* Ensure the logo doesn't exceed its container */
 }
+
