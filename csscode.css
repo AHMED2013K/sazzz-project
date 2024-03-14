@@ -1,177 +1,154 @@
-/* General styles */
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  transition: .4s;
-}
-
 body {
-  background-image: url("https://i.imgur.com/Zz4k6aM.jpeg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  overflow: hidden;
-  color: #FFF;
-  font-family: Roboto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
 
-/* Modal */
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.logo-container {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    width: 100%;
+    max-width: 200px;
+}
+
 .modal {
-  height: 470px;
-  width: 650px;
-  margin: auto;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  position: relative;
-  animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-  from {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.modal.show {
     opacity: 1;
-    transform: translateX(0%);
-  }
+    visibility: visible;
 }
 
-/* Form and invite */
-.form, .invite {
-  background: rgba(71, 71, 71, 0.8);
-  width: 50%;
-  height: 100%;
-  padding: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.form {
+    padding: 40px;
+    width: 50%;
 }
 
-/* Input */
-input {
-  background: rgba(255, 255, 255, 0.15);
-  width: 100%;
-  padding: 8px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  color: #FFF;
-  font-size: 20px;
+.form label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-/* Label */
-label {
-  font: 500 14px Roboto;
-  color: #2E9CB6;
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Button */
-button {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 21px;
-  outline: none;
-  overflow: hidden;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  color: #FFF;
-  font-size: 18px;
-  cursor: pointer;
-  transform: translateX(-50%);
+.form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #2e9cb6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-button:hover:before {
-  left: 110%;
-  transition: .3s;
+.form input[type="submit"]:hover {
+    background-color: #1d82a5;
 }
 
-button:before {
-  content: '';
-  background: rgba(255, 255, 255, 0.3);
-  height: 100%;
-  width: 65px;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  transform: skew(-45deg);
-  transition: 0s;
-}
-
-/* Invite */
 .invite {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  left: 50%;
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Title */
-h3 {
-  font: 30px Roboto;
-  text-transform: uppercase;
+.invite h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-/* Close button */
-.close {
-  background: #474747;
-  height: 30px;
-  width: 30px;
-  border: 3px solid #FFF;
-  border-radius: 50%;
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  cursor: pointer;
-  transition: .4s .3s;
+.invite p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-.close:before, .close:after {
-  content: '';
-  background: #FFF;
-  height: 80%;
-  width: 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.close:after {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-/* Open button */
 .open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  height: 45px;
-  width: 200px;
-  padding: 10px 20px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.open.active {
-  opacity: 1;
-  visibility: visible;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #2e9cb6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
 }
 
 .open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #1d82a5;
+}
+
+.open .text {
+    display: none;
+}
+
+.open .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.open::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff; /* Correction de la syntaxe */
 }
