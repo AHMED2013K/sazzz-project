@@ -105,7 +105,6 @@ button:before {
   transform: skew(-45deg);
   transition: 0s;
 }
-
 /* Invite */
 .invite {
   background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
@@ -190,4 +189,22 @@ h3 {
   max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
 }
 
+/* Text animation */
+.text-anim {
+  overflow: hidden;
+  border-right: 0.25em solid #fff;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 2s steps(40, end) forwards;
+  letter-spacing: 0.15em;
+  font-family: 'Courier New', Courier, monospace;
+}
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
