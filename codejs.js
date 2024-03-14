@@ -1,3 +1,4 @@
+// Fonction pour soumettre le formulaire
 async function submitApplication(event) {
   event.preventDefault();
   var form = document.getElementById("myForm");
@@ -14,7 +15,8 @@ async function submitApplication(event) {
 
   // Envoyer la requête avec les données du formulaire
   try {
-    const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', {method: 'POST',
+    const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSfdn2FnmzyIy0n-BjjzONVAwSu8RaUSqWIMz2qgCY9STS63Uw/formResponse', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -43,15 +45,22 @@ function toggleModal() {
 // Appeler la fonction animateText() après 1 seconde
 setTimeout(animateText, 1000);
 
+// Fonction pour animer le texte
 function animateText() {
   const textElement = document.querySelector('.text-anim');
-  const text = textElement.textContent;
+  const text = textElement.textContent.trim();
   textElement.textContent = '';
 
   let i = 0;
   const interval = setInterval(() => {
     if (i < text.length) {
-      textElement.textContent += text[i];
+      const span = document.createElement('span');
+      span.textContent = text[i];
+      span.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+      span.style.display = 'inline-block';
+      span.style.opacity = '0';
+      span.style.animationDelay = i * 0.05 + 's';
+      textElement.appendChild(span);
       i++;
     } else {
       clearInterval(interval);
