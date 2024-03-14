@@ -7,39 +7,39 @@
     <link rel="stylesheet" href="csscode.css">
 </head>
 <body>
-  <!-- Conteneur du logo -->
-  <div class="logo-container">
-    <!-- Logo -->
-    <img src="https://i.imgur.com/KO7atcz.png" alt="Logo" class="logo">
-  </div>
-  
-  <!-- Modal -->
-  <button class="open" onclick="toggleModal()">Open Modal</button>
-  <div id="myModal" class="modal">
-    <div class="form">
-      <form id="myForm" onsubmit="submitApplication(event)">
-        <label for="fullName">Full Name</label>
-        <input id="fullName" type="text" name="entry.1811773666" required>
-        
-        <label for="email">Email Address</label>
-        <input id="email" type="email" name="entry.399873434" required>
-        
-        <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" name="entry.1162317101" required>
-        
-        <label for="country">Country of Residence</label>
-        <input id="country" type="text" name="entry.1849621618">
-        
-        <button type="submit">Submit your Application</button>
-      </form>
+    <div class="container">
+        <!-- Conteneur du logo -->
+        <div class="logo-container">
+            <!-- Logo -->
+            <img src="https://i.imgur.com/KO7atcz.png" alt="Logo" class="logo">
+        </div>
+        <!-- Modal -->
+        <button class="open">
+            <span class="text">Apply Now</span>
+            <span class="circle"></span>
+        </button>
+        <div id="myModal" class="modal">
+            <div class="form">
+                <form id="myForm" onsubmit="submitApplication(event)">
+                    <label for="fullName">Full Name</label>
+                    <input id="fullName" type="text" name="entry.1811773666" required>
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" name="entry.399873434" required>
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="tel" name="entry.1162317101" required>
+                    <label for="country">Country of Residence</label>
+                    <input id="country" type="text" name="entry.1849621618">
+                    <button type="submit">Submit your Application</button>
+                </form>
+            </div>
+            <div class="invite">
+                <h3>70% Scholarship opportunity in Cyprus</h3>
+                <p>Deadline: 15 April</p>
+                <p>VISA in 10-14 Days</p>
+                <p>Available programs:Associates / Bachelors / Masters / PhDs</p>
+            </div>
+        </div>
     </div>
-    <div class="invite">
-      <h3>70% Scholarship opportunity in Cyprus</h3>
-      <div class="close" title="close"></div>
-    </div>
-  </div>
-
-  <!-- Script JavaScript -->
-  <script src="codejs.js" defer></script>
+    <script src="codejs.js" defer></script>
 </body>
 </html>
