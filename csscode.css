@@ -178,10 +178,10 @@ h3 {
 
 /* Logo Container */
 .logo-container {
-  display: flex;
-  justify-content: center; /* Horizontally center the logo */
-  align-items: flex-start; /* Align the logo to the top */
-  margin-top: 100px; /* Adjust the top margin to position the logo higher */
+  position: absolute;
+  top: 20px; /* Adjust the top position to move the logo higher */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Logo */
