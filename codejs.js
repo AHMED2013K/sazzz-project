@@ -2,23 +2,16 @@
 async function submitApplication(event) {
   event.preventDefault();
   var form = document.getElementById("myForm");
-  var formData = new FormData(form);
-
-  // Convertir les données du formulaire en format JSON
-  var jsonObject = {};
-  formData.forEach(function(value, key) {
-    jsonObject[key] = value;
-  });
 
   // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(jsonObject).toString();
+  var formDataQueryString = new URLSearchParams(new FormData(form)).toString();
 
   // Envoyer la requête avec les données du formulaire
   try {
     const response = await fetch('https://script.google.com/macros/s/AKfycbxYv7Pgd_3XDykvQ_xqI01iZz-MvQ1y0SRoa0tsG8y7ttE6wk2uMKqzwsnIjiVrM8oh/exec', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'multipart/form-data'
       },
       body: formDataQueryString
     });
