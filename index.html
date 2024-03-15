@@ -16,18 +16,18 @@
     <button class="open" onclick="toggleModal()">Open Modal</button>
     <div id="myModal" class="modal">
         <div class="form">
-            <form id="myForm" onsubmit="submitApplication(event)">
+            <form name="submit-to-google-sheet" onsubmit="submitApplication(event)">
                 <label for="fullName">Full Name</label>
-                <input id="fullName" type="text" name="entry.1811773666" required>
+                <input id="fullName" type="text" name="fullName" required>
                 
                 <label for="email">Email Address</label>
-                <input id="email" type="email" name="entry.399873434" required>
+                <input id="email" type="email" name="email" required>
                 
                 <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" name="entry.1162317101" required>
+                <input id="phone" type="tel" name="phone" required>
                 
                 <label for="country">Country of Residence</label>
-                <input id="country" type="text" name="entry.1849621618">
+                <input id="country" type="text" name="country">
                 
                 <button type="submit">Submit your Application</button>
             </form>
@@ -46,5 +46,17 @@
 
     <!-- Script JavaScript -->
     <script src="codejs.js" defer></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxYv7Pgd_3XDykvQ_xqI01iZz-MvQ1y0SRoa0tsG8y7ttE6wk2uMKqzwsnIjiVrM8oh/exec'; // Remplacez 'SCRIPT URL' par l'URL de votre script Google Apps Script
+        
+        const form = document.forms['submit-to-google-sheet'];
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message));
+        });
+    </script>
 </body>
 </html>
