@@ -48,24 +48,26 @@ setTimeout(animateText, 1000);
 // Fonction pour animer le texte
 function animateText() {
   const textElement = document.querySelector('.text-anim');
-  if (textElement) {
-    const text = textElement.textContent.trim();
-    textElement.textContent = '';
-
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < text.length) {
-        const span = document.createElement('span');
-        span.textContent = text[i];
-        span.style.animation = 'fadeIn 0.5s ease-in-out forwards';
-        span.style.display = 'inline-block';
-        span.style.opacity = '0';
-        span.style.animationDelay = i * 0.05 + 's';
-        textElement.appendChild(span);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 50);
+  if (!textElement) {
+    console.error("Element '.text-anim' not found.");
+    return;
   }
+  const text = textElement.textContent.trim();
+  textElement.textContent = '';
+
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      const span = document.createElement('span');
+      span.textContent = text[i];
+      span.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+      span.style.display = 'inline-block';
+      span.style.opacity = '0';
+      span.style.animationDelay = i * 0.05 + 's';
+      textElement.appendChild(span);
+      i++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 50);
 }
