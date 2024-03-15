@@ -2,16 +2,23 @@
 async function submitApplication(event) {
   event.preventDefault();
   var form = document.getElementById("myForm");
+  var formData = new FormData(form);
+
+  // Convertir les données du formulaire en format JSON
+  var jsonObject = {};
+  formData.forEach(function(value, key) {
+    jsonObject[key] = value;
+  });
 
   // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(new FormData(form)).toString();
+  var formDataQueryString = new URLSearchParams(jsonObject).toString();
 
   // Envoyer la requête avec les données du formulaire
   try {
     const response = await fetch('https://script.google.com/macros/s/AKfycbxYv7Pgd_3XDykvQ_xqI01iZz-MvQ1y0SRoa0tsG8y7ttE6wk2uMKqzwsnIjiVrM8oh/exec', {
       method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: formDataQueryString
     });
@@ -41,22 +48,24 @@ setTimeout(animateText, 1000);
 // Fonction pour animer le texte
 function animateText() {
   const textElement = document.querySelector('.text-anim');
-  const text = textElement.textContent.trim();
-  textElement.textContent = '';
+  if (textElement) {
+    const text = textElement.textContent.trim();
+    textElement.textContent = '';
 
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i < text.length) {
-      const span = document.createElement('span');
-      span.textContent = text[i];
-      span.style.animation = 'fadeIn 0.5s ease-in-out forwards';
-      span.style.display = 'inline-block';
-      span.style.opacity = '0';
-      span.style.animationDelay = i * 0.05 + 's';
-      textElement.appendChild(span);
-      i++;
-    } else {
-      clearInterval(interval);
-    }
-  }, 50);
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < text.length) {
+        const span = document.createElement('span');
+        span.textContent = text[i];
+        span.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.style.animationDelay = i * 0.05 + 's';
+        textElement.appendChild(span);
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 50);
+  }
 }
