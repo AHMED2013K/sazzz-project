@@ -19,8 +19,8 @@ async function submitApplication(event) {
 
     if (response.ok) {
       console.log('Form submitted successfully');
-      toggleModal();
-      alert('Form submitted successfully');
+      alert('Form submitted successfully'); // Ajout de l'alerte
+      toggleModal(); // Masquer le modal
     } else {
       console.error('Error submitting application:', response.statusText);
       alert('Failed to submit application. Please try again later.');
@@ -36,11 +36,6 @@ function toggleModal() {
   const modal = document.getElementById('myModal');
   modal.classList.toggle('active');
 }
-
-// Appeler la fonction animateText() après le chargement complet de la page
-document.addEventListener('DOMContentLoaded', function() {
-    animateText();
-});
 
 // Fonction pour animer le texte
 function animateText() {
@@ -65,3 +60,8 @@ function animateText() {
     }
   }, 50);
 }
+
+// Appeler la fonction animateText() après le chargement complet de la page
+document.addEventListener('DOMContentLoaded', function() {
+    animateText();
+});
