@@ -48,10 +48,6 @@ setTimeout(animateText, 1000);
 // Fonction pour animer le texte
 function animateText() {
   const textElement = document.querySelector('.text-anim');
-  if (!textElement) {
-    console.error("Element '.text-anim' not found.");
-    return;
-  }
   const text = textElement.textContent.trim();
   textElement.textContent = '';
 
