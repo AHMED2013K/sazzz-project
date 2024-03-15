@@ -1,17 +1,11 @@
 // Fonction pour soumettre le formulaire
 async function submitApplication(event) {
   event.preventDefault();
-  var form = document.getElementById("myForm");
+  var form = document.forms['submit-to-google-sheet'];
   var formData = new FormData(form);
 
-  // Convertir les données du formulaire en format JSON
-  var jsonObject = {};
-  formData.forEach(function(value, key) {
-    jsonObject[key] = value;
-  });
-
   // Convertir les données du formulaire en format query string
-  var formDataQueryString = new URLSearchParams(jsonObject).toString();
+  var formDataQueryString = new URLSearchParams(formData).toString();
 
   // Envoyer la requête avec les données du formulaire
   try {
@@ -42,12 +36,10 @@ function toggleModal() {
   modal.classList.toggle('active');
 }
 
-// Appeler la fonction animateText() après 1 seconde
-setTimeout(animateText, 1000);
-
 // Fonction pour animer le texte
 function animateText() {
   const textElement = document.querySelector('.text-anim');
+  if (!textElement) return; // Vérifier si l'élément existe
   const text = textElement.textContent.trim();
   textElement.textContent = '';
 
@@ -67,3 +59,8 @@ function animateText() {
     }
   }, 50);
 }
+
+// Appeler la fonction animateText() après le chargement complet de la page
+document.addEventListener('DOMContentLoaded', function() {
+    animateText();
+});
