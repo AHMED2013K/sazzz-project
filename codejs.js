@@ -11,7 +11,7 @@ async function submitApplication(event) {
 
   // Envoyer la requête avec les données du formulaire
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbwicVairYjkmJs249qeFmW4rCvHp0Fb2m9Ogair0BY5MIhoHElQoamWl5k7h7r0CyW8/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbx2_G2nzw8jpUrXPtfUp8RgHFrO61YzyaCBv3gwtBm1E0gQh3bvapm1GI8k2gs615nw/exec', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
