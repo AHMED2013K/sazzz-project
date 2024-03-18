@@ -1,7 +1,9 @@
+// Récupérer le formulaire
+const form = document.forms['submit-to-google-sheet'];
+
 // Fonction pour soumettre le formulaire
 async function submitApplication(event) {
   event.preventDefault();
-  var form = document.forms['submit-to-google-sheet'];
   var formData = new FormData(form);
 
   // Convertir les données du formulaire en format query string
@@ -65,3 +67,6 @@ function animateText() {
 document.addEventListener('DOMContentLoaded', function() {
     animateText();
 });
+
+// Ajouter un écouteur d'événement à la soumission du formulaire
+form.addEventListener('submit', submitApplication);
