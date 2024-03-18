@@ -18,16 +18,16 @@
         <div class="form">
             <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbwicVairYjkmJs249qeFmW4rCvHp0Fb2m9Ogair0BY5MIhoHElQoamWl5k7h7r0CyW8/exec" method="POST" onsubmit="submitApplication(event)">
                 <label for="fullName">Full Name</label>
-                <input id="fullName" type="text" name="fullName" required>
+                <input id="fullName" type="text" name="Full Name" autocomplete="name" required>
                 
                 <label for="email">Email Address</label>
-                <input id="email" type="email" name="email" required>
+                <input id="email" type="email" name="Email Address" autocomplete="email" required>
                 
                 <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" name="phone" required>
+                <input id="phone" type="tel" name="Phone Number" autocomplete="tel" required>
                 
                 <label for="country">Country of Residence</label>
-                <input id="country" type="text" name="country">
+                <input id="country" type="text" name="Country of Residence" autocomplete="country">
                 
                 <button type="submit">Submit your Application</button>
             </form>
