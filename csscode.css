@@ -118,35 +118,6 @@ h3 {
   text-transform: uppercase;
 }
 
-/* Close button */
-.close {
-  background: #474747;
-  height: 30px;
-  width: 30px;
-  border: 3px solid #FFF;
-  border-radius: 50%;
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  cursor: pointer;
-  transition: .4s .3s;
-}
-
-.close:before, .close:after {
-  content: '';
-  background: #FFF;
-  height: 80%;
-  width: 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.close:after {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
 /* Open button */
 .open {
   background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
