@@ -67,6 +67,3 @@ function animateText() {
 document.addEventListener('DOMContentLoaded', function() {
     animateText();
 });
-
-// Ajouter un écouteur d'événement à la soumission du formulaire
-form.addEventListener('submit', submitApplication);
