@@ -52,7 +52,7 @@
     <script src="codejs.js" defer></script>
 
 <!-- Script Tawk.to -->
-<script type="text/javascript" style="color: #21C5D8;">
+<script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -60,10 +60,15 @@ s1.async=true;
 s1.src='https://embed.tawk.to/65faa3851ec1082f04d93ca3/1hpdgtggo';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
+s1.onload = function() {
+    // Une fois que le script Tawk.to est chargé, changez la couleur du widget
+    Tawk_API.setColor('#21C5D8'); // Changez la couleur en bleu
+};
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!-- End of Tawk.to Script -->
+
 
 
 </body>
