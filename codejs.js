@@ -63,10 +63,4 @@ function animateText() {
   }, 50);
 }
 
-// Appeler la fonction animateText() après le chargement complet de la page
-document.addEventListener('DOMContentLoaded', function() {
-    animateText();
-});
-
-// Ajouter un écouteur d'événement à la soumission du formulaire
-form.addEventListener('submit', submitApplication);
+//
