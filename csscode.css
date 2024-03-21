@@ -216,13 +216,11 @@ h3 {
 }
 /* Ajouts pour le nouveau bouton */
 button#btn {
-    width: 210px; /* Ajustement de la largeur pour correspondre au bouton précédent */
-    height: 45px; /* Ajustement de la hauteur pour correspondre au bouton précédent */
-    border: none;
-    outline: none;
+    width: auto; /* Le bouton s'adapte à la taille du texte */
+    padding: 10px 20px; /* Ajout de rembourrage pour ajuster la taille */
     background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
     color: #fff;
-    font-size: 20px; /* Réduction de la taille de la police pour tenir dans le bouton */
+    font-size: 18px; /* Réduction de la taille de la police */
     border-radius: 21px;
     text-align: center;
     box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
@@ -271,3 +269,8 @@ button#btn.active svg path {
     transition: 1s;
     transition-delay: 1s;
 }
+
+#btn p {
+    color: #fff; /* Changement de couleur du texte à blanc */
+}
+
