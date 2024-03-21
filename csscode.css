@@ -73,37 +73,73 @@ label {
 }
 
 /* Button */
-button {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 21px;
-  outline: none;
-  overflow: hidden;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  color: #FFF;
-  font-size: 18px;
-  cursor: pointer;
-  transform: translateX(-50%);
+.blue-btn {
+    background: #007bff; /* Conservez la couleur bleue */
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    padding: 0; /* Supprimez le rembourrage par défaut */
+    width: 270px;
+    height: 80px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
 }
 
-button:hover:before {
-  left: 110%;
-  transition: .3s;
+.blue-btn #btnText {
+    margin: 0; /* Supprimez la marge autour du texte */
+    padding: 25px; /* Ajoutez un remplissage pour centrer le texte */
+    transition: 1s;
 }
 
-button:before {
-  content: '';
-  background: rgba(255, 255, 255, 0.3);
-  height: 100%;
-  width: 65px;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  transform: skew(-45deg);
-  transition: 0s;
+.blue-btn .check-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    right: -40px;
+    opacity: 0;
+}
+
+.blue-btn .check-box svg {
+    width: 40px;
+    margin: 20px;
+}
+
+.blue-btn svg path {
+    stroke-width: 3;
+    stroke: #fff;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+
+.blue-btn.active {
+    background: #ff2b75;
+    transition: 1s;
+}
+
+.blue-btn.active .check-box {
+    right: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+.blue-btn.active #btnText {
+    margin-right: 125px;
+    transition: 1s;
+}
+
+.blue-btn.active svg path {
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
 }
 
 /* Invite */
@@ -144,75 +180,4 @@ h3 {
 }
 
 .open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Styles pour le logo dans le titre */
-.logo-container {
-  position: absolute;
-  top: 20px; /* Position verticale du logo */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.logo {
-  max-width: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
-  max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
-}
-
-/* Ajoutez cette classe pour définir la taille du logo dans le titre */
-.title-logo {
-  width: 200px; /* Largeur souhaitée */
-  height: auto; /* Hauteur automatique pour maintenir le ratio */
-}
-
-/* Nouveau style pour la partie droite */
-.right-section {
-  background: linear-gradient(to right, #2E9CB6, #2E9CB6); /* Dégradé de couleur */
-  color: #FFF;
-  padding: 20px;
-  width: 50%;
-}
-
-.right-section h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.right-section ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.right-section ul li {
-  margin-bottom: 10px;
-}
-
-.right-section ul li:before {
-  content: "\2022"; /* Utilisation du caractère de puce */
-  color: #FFD700; /* Couleur dorée */
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
-
-.right-section p {
-  font-size: 16px;
-}
-
-/* Media Query pour les petits écrans */
-@media screen and (max-width: 768px) {
-  .right-section {
-    width: 100%; /* Sur les petits écrans, prendre toute la largeur */
-  }
-}
-.study-text {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 24px;
-    line-height: normal; /* Par défaut */
-}
-
+  box-shadow: 0
