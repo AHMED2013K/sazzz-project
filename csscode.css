@@ -214,3 +214,60 @@ h3 {
     font-size: 24px;
     line-height: normal; /* Par défaut */
 }
+/* Ajouts pour le nouveau bouton */
+button#btn {
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+button#btn:hover:before {
+    left: 110%;
+    transition: .3s;
+}
+
+button#btn:before {
+    content: '';
+    background: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    width: 65px;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: skew(-45deg);
+    transition: 0s;
+}
+
+button#btn.active {
+    background: #ff2b75;
+    transition: 1s;
+}
+
+button#btn.active:before {
+    right: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+button#btn.active p {
+    margin-right: 125px;
+    transition: 1s;
+}
+
+button#btn.active svg path {
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
+}
