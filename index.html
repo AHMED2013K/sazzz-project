@@ -31,7 +31,8 @@
                 <label for="country">Country of Residence</label>
                 <input id="country" type="text" name="Country of Residence" autocomplete="country">
                 
-                <button type="submit">Submit your Application</button>
+                <!-- Nouveau bouton -->
+                <button id="btn" type="submit">Submit your Application</button>
             </form>
         </div>
         <!-- Modifiez uniquement cette section pour le texte "70% scholarship opportunity in Cyprus" -->
@@ -83,6 +84,16 @@
     <!-- Annonce 3 -->
     <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4009550931572611" data-ad-slot="1682038674"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <!-- JavaScript pour le nouveau bouton -->
+    <script type="text/javascript">
+        const btn = document.querySelector("#btn");
+
+        btn.onclick = () => {
+            btn.innerHTML = "Thanks";
+            btn.classList.add("active");
+        };
+    </script>
 
 </body>
 </html>
