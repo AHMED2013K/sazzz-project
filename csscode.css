@@ -117,3 +117,54 @@ h3 {
 .adsbygoogle {
   margin-bottom: 20px;
 }
+
+/* Nouveau style pour la partie droite */
+.right-section {
+  background: linear-gradient(to right, #2E9CB6, #2E9CB6);
+  color: #FFF;
+  padding: 20px;
+  width: 50%;
+}
+
+.right-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.right-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-section ul li {
+  margin-bottom: 10px;
+}
+
+.right-section ul li:before {
+  content: "\2022"; /* Utilisation du caractère de puce */
+  color: #FFD700; /* Couleur dorée */
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.right-section p {
+  font-size: 16px;
+}
+
+/* Media Query pour les petits écrans */
+@media screen and (max-width: 768px) {
+  .right-section {
+    width: 100%; /* Sur les petits écrans, prendre toute la largeur */
+  }
+}
+
+.study-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 24px;
+    line-height: normal; /* Par défaut */
+}
