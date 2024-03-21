@@ -4,7 +4,7 @@
 *:after {
   box-sizing: border-box;
   margin: 0;
-  transition: .4s;
+  padding: 0;
 }
 
 body {
@@ -73,90 +73,8 @@ label {
 }
 
 /* Button */
-.blue-btn {
-    background: #007bff; /* Conservez la couleur bleue */
-    color: #fff;
-    font-size: 22px;
-    border-radius: 40px;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    border: none;
-    padding: 0; /* Supprimez le rembourrage par défaut */
-    width: 270px;
-    height: 80px;
-    text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-}
-
-.blue-btn #btnText {
-    margin: 0; /* Supprimez la marge autour du texte */
-    padding: 25px; /* Ajoutez un remplissage pour centrer le texte */
-    transition: 1s;
-}
-
-.blue-btn .check-box {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
-    position: absolute;
-    top: 0;
-    right: -40px;
-    opacity: 0;
-}
-
-.blue-btn .check-box svg {
-    width: 40px;
-    margin: 20px;
-}
-
-.blue-btn svg path {
-    stroke-width: 3;
-    stroke: #fff;
-    stroke-dasharray: 34;
-    stroke-dashoffset: 34;
-    stroke-linecap: round;
-}
-
-.blue-btn.active {
-    background: #ff2b75;
-    transition: 1s;
-}
-
-.blue-btn.active .check-box {
-    right: 0;
-    opacity: 1;
-    transition: 1s;
-}
-
-.blue-btn.active #btnText {
-    margin-right: 125px;
-    transition: 1s;
-}
-
-.blue-btn.active svg path {
-    stroke-dashoffset: 0;
-    transition: 1s;
-    transition-delay: 1s;
-}
-
-/* Invite */
-.invite {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  left: 50%;
-}
-
-/* Title */
-h3 {
-  font: 30px Roboto;
-  text-transform: uppercase;
-}
-
-/* Open button */
 .open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
+  background: linear-gradient(-45deg, #2E9CB6, #2E9CB6);
   height: 45px;
   width: 200px;
   padding: 10px 20px;
@@ -180,4 +98,22 @@ h3 {
 }
 
 .open:hover {
-  box-shadow: 0
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Invite */
+.invite {
+  background: linear-gradient(-45deg, #2E9CB6, #2E9CB6);
+  left: 50%;
+}
+
+/* Title */
+h3 {
+  font: 30px Roboto;
+  text-transform: uppercase;
+}
+
+/* Ads */
+.adsbygoogle {
+  margin-bottom: 20px;
+}
