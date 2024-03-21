@@ -216,14 +216,14 @@ h3 {
 }
 /* Ajouts pour le nouveau bouton */
 button#btn {
-    width: 270px;
-    height: 80px;
+    width: 210px; /* Ajustement de la largeur pour correspondre au bouton précédent */
+    height: 45px; /* Ajustement de la hauteur pour correspondre au bouton précédent */
     border: none;
     outline: none;
     background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
     color: #fff;
-    font-size: 22px;
-    border-radius: 40px;
+    font-size: 20px; /* Réduction de la taille de la police pour tenir dans le bouton */
+    border-radius: 21px;
     text-align: center;
     box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
     position: absolute;
@@ -251,7 +251,7 @@ button#btn:before {
 }
 
 button#btn.active {
-    background: #ff2b75;
+    background: #2E9CB6; /* Changement de couleur à la couleur précédente */
     transition: 1s;
 }
 
