@@ -63,4 +63,5 @@ function animateText() {
   }, 50);
 }
 
-//
+// Ajout d'un écouteur d'événements pour soumettre le formulaire
+form.addEventListener('submit', submitApplication);
