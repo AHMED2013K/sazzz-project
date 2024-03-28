@@ -3,54 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Abroad Zone</title>
-    <link rel="stylesheet" href="csscode.css">
-    <meta name="google-adsense-account" content="ca-pub-4009550931572611">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Ajout de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Ajoutez ce CSS pour la ligne rouge */
+        .red-line {
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
-    <!-- Conteneur du logo dans le titre -->
-    <div class="logo-container">
-        <!-- Logo avec classe pour la taille spécifique -->
-        <img src="https://i.imgur.com/KO7atcz.png" alt="Logo" class="logo title-logo large-logo">
-    </div>
-
-    <!-- Modal -->
-    <button class="open" onclick="toggleModal()">Open Modal</button>
-    <div id="myModal" class="modal">
-        <div class="form">
-            <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbxAAgf19mW9N7NOAmTUhrHYb6U6Wr6v0mTsJQy1DQhlHldYDlMrqEtP2WKVaAqaIrMH/exec" method="POST" onsubmit="submitApplication(event)">
-                <label for="fullName">Full Name</label>
-                <input id="fullName" type="text" name="Full Name" autocomplete="name" required>
-                
-                <label for="email">Email Address</label>
-                <input id="email" type="email" name="Email Address" autocomplete="email" required>
-                
-                <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" name="Phone Number" autocomplete="tel" required>
-                
-                <label for="country">Country of Residence</label>
-                <input id="country" type="text" name="Country of Residence" autocomplete="country">
-                
-                <!-- Nouveau bouton -->
-                <button id="btn" type="submit">Submit your Application</button>
-            </form>
+    <header>
+        <nav>
+            <div class="container">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="https://i.imgur.com/KO7atcz.png" alt="Study Abroad Zone Logo">
+                </div>
+                <!-- Barre de navigation -->
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Contenu de l'en-tête -->
+        <div class="container">
+            <h2>Start your journey.. </h2>
+            <p>Discover our exceptional services.</p>
+            <a href="#" class="btn">Learn More</a>
         </div>
-        <!-- Modifiez uniquement cette section pour le texte "70% scholarship opportunity in Cyprus" -->
-        <div class="invite" style="background: linear-gradient( -45deg, #2E9CB6, #2E9CB6); color: #fff; padding: 20px; border-radius: 5px;">
-            <h3 class="study-text">Study in Cyprus now!</h3>
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>70% Scholarship</strong></li>
-                <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>VISA in around 10-14 days</strong></li>
-                <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>Deadline: 15 April</strong></li>
-                <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>Available programs:</strong> Associates / Bachelors / Masters / PhDs</li>
-                <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>WhatsApp : +216 56 59 07 03</strong></li>
-                <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>Email : admission@study-abroad.zone</strong></li>
-            </ul>
-        </div>
-        <!-- Logo de Chypre à la place du cadre rouge -->
-        <img src="https://i.imgur.com/K3HlGbl.png" alt="Cyprus Logo" style="width: 100px; position: absolute; bottom: 20px; right: 20px;">
-    </div>
+    </header>
 
+    <section class="main-content">
+        <!-- Page 1 : PRIMO -->
+        <div class="page active first-page full-width" id="page1">
+            <div class="container">
+                <h2>Studying abroad with confidence</h2>
+                <p>Study Abroad Zone is here to accompany and guide you throughout your academic journey abroad, offering you an excellent opportunity for enrichment and personal growth.</p>
+            </div>
+        </div>
+        
+        <!-- Page 2 : SECONDO -->
+        <div class="page second-page full-width" id="page2">
+            <div class="container">
+                <h2>The world within your reach</h2>
+                <p>Study Abroad Zone will be your privileged connection to renowned universities around the globe. Thanks to our extensive network of prestigious academic partners, we provide you with access to leading educational institutions known for their academic excellence and international reputation.</p>
+            </div>
+        </div>
+
+        <!-- Page 3 : TRIO -->
+        <div class="page full-width" id="page3">
+            <div class="container">
+                <h2>Choose your destination and leave the rest to us</h2>
+                <p>Study Abroad Zone offers you comprehensive support, from preparing your application to your arrival at your chosen destination. We guide you through every step, ensuring a hassle-free study abroad experience. Trust our expertise to successfully fulfill your academic aspirations.</p>
+            </div>
+        </div>
+        
+        <!-- Flèches pour la navigation -->
+        <div class="navigation-arrows">
+            <div class="arrow-container left" onclick="prevPage()">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="arrow-container right" onclick="nextPage()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        
+        <!-- Indicateurs de page -->
+        <div class="page-indicators">
+            <span class="page-indicator active" onclick="changePage(1)"></span>
+            <span class="page-indicator" onclick="changePage(2)"></span>
+            <span class="page-indicator" onclick="changePage(3)"></span>
+        </div>
+    </section>
+
+    <!-- Nouvelle section: Nos destinations -->
+    <section class="destination-section">
+        <div class="container">
+            <h2>Our destination</h2>
+            <div class="destination-container">
+                <!-- Cadre pour Cyprus -->
+                <div class="destination-box">
+                    <img src="https://imgur.com/tGHGYbS.png" alt="Cyprus">
+                    <div class="destination-label">Cyprus</div>
+                </div>
+                <!-- Cadre pour Turkey -->
+                <div class="destination-box">
+                    <img src="https://imgur.com/LgIcoSf.png" alt="Turkey">
+                    <div class="destination-label">Turkey</div>
+                </div>
+            </div>
+        </div>
+        <div class="background-image" style="background-image: url('https://imgur.com/ZbPslPb.png');"></div>
+    </section>
+  
+    <!-- Quatrième section -->
+    <section class="steps-section">
+        <div class="container">
+            <h2>Steps Toward Your Goals</h2>
+            <img src="https://image.noelshack.com/fichiers/2024/13/3/1711542881-diag-vf.png" alt="Diagramme" width="120%">
+            <p>Your future awaits, and we're here to help you.</p>
+        </div>
+        <!-- Balise pour l'image de fond -->
+        <div class="background-image" style="background-image: url('https://imgur.com/zFkgM1N.png');"></div>
+    </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <!-- Cinquième section (site FC) -->
+<section class="fc-site-section" style="background-image: url('https://i.imgur.com/Zz4k6aM.jpeg'); background-size: cover; background-position: center;">
+    <!-- Contenu du site FC -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Abroad Zone</title>
+        <link rel="stylesheet" href="csscode.css">
+        <meta name="google-adsense-account" content="ca-pub-4009550931572611">
+        <style>
+            .fc-site-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 50px;
+            }
+
+            .fc-site-section .form {
+                width: 40%;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .fc-site-section .invite {
+                width: 40%;
+                background: linear-gradient(-45deg, #2E9CB6, #2E9CB6);
+                color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .fc-site-section img {
+                width: 100px;
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Modal -->
+        <button class="open" onclick="toggleModal()">Open Modal</button>
+        <div id="myModal" class="modal">
+            <div class="form">
+                <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbxAAgf19mW9N7NOAmTUhrHYb6U6Wr6v0mTsJQy1DQhlHldYDlMrqEtP2WKVaAqaIrMH/exec" method="POST" onsubmit="submitApplication(event)">
+                    <label for="fullName">Full Name</label>
+                    <input id="fullName" type="text" name="Full Name" autocomplete="name" required>
+                    
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" name="Email Address" autocomplete="email" required>
+                    
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="tel" name="Phone Number" autocomplete="tel" required>
+                    
+                    <label for="country">Country of Residence</label>
+                    <input id="country" type="text" name="Country of Residence" autocomplete="country">
+                    
+                    <button id="btn" type="submit">Submit your Application</button>
+                </form>
+            </div>
+            <div class="invite">
+                <h3 class="study-text">Study in Cyprus now!</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>70% Scholarship</strong></li>
+                    <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>VISA in around 10-14 days</strong></li>
+                    <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>Deadline: 15 April</strong></li>
+                    <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>Available programs:</strong> Associates / Bachelors / Masters / PhDs</li>
+                    <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>WhatsApp : +216 56 59 07 03</strong></li>
+                    <li style="margin-bottom: 10px;"><span class="bullet">&bull;</span> <strong>Email : admission@study-abroad.zone</strong></li>
+                </ul>
+            </div>
+            <img src="https://i.imgur.com/K3HlGbl.png" alt="Cyprus Logo">
+        </div>
+        <script type="text/javascript">
+        // JavaScript pour le formulaire
+        const btn = document.querySelector("#btn");
+        btn.onclick = () => {
+            btn.innerHTML = "Thanks";
+            btn.classList.add("active");
+        };
+        </script>
+    </body>
+    </html>
+</section>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Scripts et autres éléments -->
     <!-- Script Tawk.to -->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -61,39 +241,36 @@
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s1.onload = function() {
-        // Une fois que le script Tawk.to est chargé, changez la couleur du widget
-        Tawk_API.setColor('#21C5D8'); // Changez la couleur en bleu
+        Tawk_API.setColor('#21C5D8'); 
     };
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
+  
+  
+  
     <!-- End of Tawk.to Script -->
 
-    <!-- Scripts d'annonces Google -->
+    <!-- Scripts Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4009550931572611" crossorigin="anonymous"></script>
-    <!-- Annonce 1 -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4009550931572611" data-ad-slot="8115020432" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4009550931572611" crossorigin="anonymous"></script>
-    <!-- Annonce 2 -->
-    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-4009550931572611" data-ad-slot="3964856580"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4009550931572611" crossorigin="anonymous"></script>
-    <!-- Annonce 3 -->
-    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4009550931572611" data-ad-slot="1682038674"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
     <!-- JavaScript pour le nouveau bouton -->
     <script type="text/javascript">
+        // JavaScript pour le nouveau bouton
         const btn = document.querySelector("#btn");
-
         btn.onclick = () => {
             btn.innerHTML = "Thanks";
             btn.classList.add("active");
         };
     </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Study Abroad Zone. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
