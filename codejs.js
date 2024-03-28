@@ -89,3 +89,36 @@ function prevPage() {
 
 // Ajout d'un écouteur d'événements pour soumettre le formulaire
 form.addEventListener('submit', submitApplication);
+// Fonction pour passer à la page suivante
+function nextPage() {
+    const formPages = document.querySelectorAll('.form-page');
+    const contentPages = document.querySelectorAll('.content-page');
+
+    if (currentPage < formPages.length) {
+        formPages[currentPage - 1].classList.remove('active');
+        formPages[currentPage].classList.add('active');
+        contentPages[currentPage - 1].classList.remove('active');
+        contentPages[currentPage].classList.add('active');
+        currentPage++;
+    }
+}
+
+// Fonction pour revenir à la page précédente
+function prevPage() {
+    const formPages = document.querySelectorAll('.form-page');
+    const contentPages = document.querySelectorAll('.content-page');
+
+    if (currentPage > 1) {
+        formPages[currentPage - 1].classList.remove('active');
+        formPages[currentPage - 2].classList.add('active');
+        contentPages[currentPage - 1].classList.remove('active');
+        contentPages[currentPage - 2].classList.add('active');
+        currentPage--;
+    }
+}
+
+// Définir la variable pour suivre la page active
+let currentPage = 1;
+
+// Ajout d'un écouteur d'événements pour soumettre le formulaire
+form.addEventListener('submit', submitApplication);
