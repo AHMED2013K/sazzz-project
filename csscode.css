@@ -444,9 +444,13 @@ section:nth-child(5) {
 }
 /* Ajuster l'espace pris par la section 5 */
 .fc-site-section {
-    padding: 150px 0; /* Ajuster le padding pour augmenter l'espace vertical */
-    margin-top: 2px; /* Ajuster la marge supérieure pour augmenter l'espace entre les sections */
+    margin-top: 8px; /* Ajuster la marge supérieure pour augmenter l'espace entre les sections */
     margin-bottom: 100px; /* Ajuster la marge inférieure pour augmenter l'espace entre les sections */
+  .fc-site-section {
+    padding-top: 2000px; /* Réduisez le padding en haut */
+    padding-bottom: 5000px; /* Réduisez le padding en bas */
+}
+
 }
 
 
