@@ -292,7 +292,7 @@ footer {
     padding: 0; /* Supprimer le padding pour centrer la section en haut */
 }
 .steps-section {
-    padding: 100px 0; /* Augmenter la taille de la section */
+    padding: 120px 0; /* Augmenter la taille de la section */
     margin-top: 8px; /* Ajoutez une marge en haut pour aligner avec les autres sections */
     text-align: center; /* Centrer le contenu horizontalement */
     background-image: url('https://imgur.com/4wvSPYI.png'); /* Ajouter le fond d'écran */
