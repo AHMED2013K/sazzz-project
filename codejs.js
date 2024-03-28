@@ -63,5 +63,29 @@ function animateText() {
   }, 50);
 }
 
+// Définir la variable pour suivre la page active
+let currentPage = 1;
+
+// Fonction pour passer à la page suivante
+function nextPage() {
+    const pages = document.querySelectorAll('.second-page');
+    if (currentPage < pages.length) {
+        pages[currentPage - 1].classList.remove('active');
+        pages[currentPage].classList.add('active');
+        currentPage++;
+    }
+}
+
+// Fonction pour revenir à la page précédente
+function prevPage() {
+    const pages = document.querySelectorAll('.second-page');
+    if (currentPage > 1) {
+        pages[currentPage - 1].classList.remove('active');
+        pages[currentPage - 2].classList.add('active');
+        currentPage--;
+    }
+}
+
+
 // Ajout d'un écouteur d'événements pour soumettre le formulaire
 form.addEventListener('submit', submitApplication);
