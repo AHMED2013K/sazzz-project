@@ -1,276 +1,532 @@
-/* General styles */
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  transition: .4s;
-}
-
-body {
-  background-image: url("https://i.imgur.com/Zz4k6aM.jpeg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  color: #FFF;
-  font-family: Roboto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Modal */
-.modal {
-  height: 470px;
-  width: 650px;
-  margin: auto;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  position: relative;
-  animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-/* Form and invite */
-.form, .invite {
-  background: rgba(71, 71, 71, 0.8);
-  width: 50%;
-  height: 100%;
-  padding: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Input */
-input {
-  background: rgba(255, 255, 255, 0.15);
-  width: 100%;
-  padding: 8px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  color: #FFF;
-  font-size: 20px;
-}
-
-/* Label */
-label {
-  font: 500 14px Roboto;
-  color: #2E9CB6;
-}
-
-/* Button */
-button {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 21px;
-  outline: none;
-  overflow: hidden;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  color: #FFF;
-  font-size: 18px;
-  cursor: pointer;
-  transform: translateX(-50%);
-}
-
-button:hover:before {
-  left: 110%;
-  transition: .3s;
-}
-
-button:before {
-  content: '';
-  background: rgba(255, 255, 255, 0.3);
-  height: 100%;
-  width: 65px;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  transform: skew(-45deg);
-  transition: 0s;
-}
-
-/* Invite */
-.invite {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  left: 50%;
-}
-
-/* Title */
-h3 {
-  font: 30px Roboto;
-  text-transform: uppercase;
-}
-
-/* Open button */
-.open {
-  background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-  height: 45px;
-  width: 200px;
-  padding: 10px 20px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.open.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.open:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Styles pour le logo dans le titre */
-.logo-container {
-  position: absolute;
-  top: 20px; /* Position verticale du logo */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.logo {
-  max-width: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
-  max-height: 100%; /* Assurez-vous que le logo ne dépasse pas son conteneur */
-}
-
-/* Ajoutez cette classe pour définir la taille du logo dans le titre */
-.title-logo {
-  width: 200px; /* Largeur souhaitée */
-  height: auto; /* Hauteur automatique pour maintenir le ratio */
-}
-
-/* Nouveau style pour la partie droite */
-.right-section {
-  background: linear-gradient(to right, #2E9CB6, #2E9CB6); /* Dégradé de couleur */
-  color: #FFF;
-  padding: 20px;
-  width: 50%;
-}
-
-.right-section h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.right-section ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.right-section ul li {
-  margin-bottom: 10px;
-}
-
-.right-section ul li:before {
-  content: "\2022"; /* Utilisation du caractère de puce */
-  color: #FFD700; /* Couleur dorée */
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
-
-.right-section p {
-  font-size: 16px;
-}
-
-/* Media Query pour les petits écrans */
-@media screen and (max-width: 768px) {
-  .right-section {
-    width: 100%; /* Sur les petits écrans, prendre toute la largeur */
-  }
-}
-.study-text {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 24px;
-    line-height: normal; /* Par défaut */
-}
-/* Ajouts pour le nouveau bouton */
-button#btn {
-    width: auto; /* Le bouton s'adapte à la taille du texte */
-    padding: 10px 20px; /* Ajout de rembourrage pour ajuster la taille */
-    background: linear-gradient( -45deg, #2E9CB6, #2E9CB6);
-    color: #fff;
-    font-size: 18px; /* Réduction de la taille de la police */
-    border-radius: 21px;
-    text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+/* Styles pour les flèches de navigation */
+.navigation-arrows {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* Ajout pour assurer que les flèches sont au-dessus du contenu */
+}
+
+.arrow-container {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-container i {
+    color: #333;
+    font-size: 24px;
+}
+
+.arrow-container.left {
+    margin-left: 20px;
+}
+
+.arrow-container.right {
+    margin-right: 20px;
+}
+
+/* Styles pour les indicateurs de page */
+.page-indicators {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ajout pour assurer que les indicateurs sont au-dessus du contenu */
+}
+
+.page-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0 5px;
     cursor: pointer;
 }
 
-button#btn:hover:before {
-    left: 110%;
-    transition: .3s;
+.page-indicator.active {
+    background-color: #fff;
 }
 
-button#btn:before {
-    content: '';
-    background: rgba(255, 255, 255, 0.3);
-    height: 100%;
-    width: 65px;
+/* Styles pour le contenu des pages */
+.main-content {
+    position: relative;
+    height: calc(40vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    display: none;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+.page h2 {
+    margin-bottom: 20px;
+}
+
+.page p {
+    margin-bottom: 40px;
+}
+
+/* Réglage de la largeur des sections */
+.page.full-width {
+    width: 100vw; /* Les sections occuperont toute la largeur de la page */
+}
+
+/* Réglage des arrière-plans des pages */
+.page#page1 {
+    background-image: url('https://imgur.com/nRuZLar.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: calc(39vh - 120px); /* Assurez-vous que la hauteur est la même que celle de la première page */
+}
+
+.page#page2 {
+    background-image: url('https://imgur.com/b7S6UQ9.png'); /* Utilisez l'image appropriée pour "Visa et passeport" */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: calc(39vh - 120px); /* Assurez-vous que la hauteur est la même que celle de la première page */
+}
+
+.page#page3 {
+    background-image: url('https://imgur.com/aUuybnu.png'); /* Utilisez l'image appropriée pour "Transport plus logement" */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: calc(39vh - 120px); /* Assurez-vous que la hauteur est la même que celle de la première page */
+}
+
+/* Réglage de la position du pied de page */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Styles pour la section Nos destinations */
+.destination-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    align-items: flex-start; /* Aligner le contenu en haut */
+}
+
+.destination-section .container {
+    position: relative;
+    z-index: 2;
+    padding: 150px 0;
+}
+
+.destination-section h2 {
+  margin-bottom: 100px;
+    margin-top: -50px; /* Ajouter une marge en haut */
+    color: #fff; /* Couleur du texte blanche */
+    font-size: 36px; /* Taille de la police */
+    font-weight: bold; /* Police en gras */
+    font-family: Arial, sans-serif; /* Style d'écriture similaire aux autres titres */
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+
+
+
+.destination-section .background-image {
     position: absolute;
     top: 0;
-    left: -100%;
-    transform: skew(-45deg);
-    transition: 0s;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
-button#btn.active {
-    background: #2E9CB6; /* Changement de couleur à la couleur précédente */
-    transition: 1s;
+.destination-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-button#btn.active:before {
-    right: 0;
-    opacity: 1;
-    transition: 1s;
+.destination-box {
+    width: 300px;
+    height: 300px;
+    border: 5px double #fff; /* Bordure double de 2.5 cm */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
-button#btn.active p {
-    margin-right: 125px;
-    transition: 1s;
+.destination-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-button#btn.active svg path {
-    stroke-dashoffset: 0;
-    transition: 1s;
-    transition-delay: 1s;
+.destination-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px; /* Position à gauche */
+    color: #fff;
+    font-size: 24px; /* Taille du texte plus grande */
+    font-weight: bold; /* Texte en gras */
 }
 
-#btn p {
-    color: #fff; /* Changement de couleur du texte à blanc */
+.destination-label.right {
+    left: unset;
+    right: 10px; /* Position à droite */
 }
 
+/* Styles restants (votre ancien code) */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: url('https://i.imgur.com/pYLtUFU.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    background: #fff;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.steps-section {
+    padding: 300px 0; /* Augmentez la valeur de padding pour plus d'espace */
+}
+.steps-section .background-image {
+    background-image: url('https://imgur.com/zFkgM1N.png');
+}
+.background-image {
+    position: relative; /* Modifier la position en relative */
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+}
+.steps-section {
+    padding: 0; /* Supprimer le padding pour centrer la section en haut */
+    align-items: flex-start; /* Centrer la section en haut */
+}
+
+.steps-section .container {
+    padding: 0; /* Supprimer le padding pour centrer la section en haut */
+}
+.steps-section {
+    padding: 0;
+    margin-top: 50px; /* Ajoutez une marge en haut pour aligner avec les autres sections */
+}
+.steps-section {
+    padding: 0;
+    margin-top: 50px; /* Ajoutez une marge en haut pour aligner avec les autres sections */
+    text-align: center; /* Centrer le contenu horizontalement */
+}
+
+.steps-section .container {
+    max-width: 1200px; /* Définir une largeur maximale pour le contenu */
+    margin: 0 auto; /* Centrer le contenu horizontalement */
+    padding: 0; /* Supprimer le padding pour centrer la section en haut */
+}
+.steps-section {
+    padding: 100px 0; /* Augmenter la taille de la section */
+    margin-top: 8px; /* Ajoutez une marge en haut pour aligner avec les autres sections */
+    text-align: center; /* Centrer le contenu horizontalement */
+    background-image: url('https://imgur.com/4wvSPYI.png'); /* Ajouter le fond d'écran */
+    background-size: cover; /* Utiliser cover pour que l'image remplisse la section */
+    background-position: center; /* Centrer l'image de fond */
+}
+
+.steps-section .container {
+    max-width: 1200px; /* Définir une largeur maximale pour le contenu */
+    margin: 0 auto; /* Centrer le contenu horizontalement */
+    padding: 0; /* Supprimer le padding pour centrer la section en haut */
+}
+.steps-section h2 {
+    margin-bottom: 100px;
+    margin-top: -50px; /* Ajout d'une marge négative pour déplacer le texte vers le haut */
+    color: #fff; /* Couleur du texte en blanc */
+    font-size: 36px; /* Taille de la police */
+    font-weight: bold; /* Police en gras */
+    font-family: Arial, sans-serif; /* Style d'écriture similaire aux autres titres */
+    text-align: center; /* Centrer le texte horizontalement */
+}
+.steps-section p {
+    margin-top: 10px; /* Ajout d'une marge négative pour déplacer le paragraphe vers le haut */
+    color: #fff; /* Couleur du texte en blanc */
+  font-size: 30px; /* Augmenter la taille de la police */
+}
+.steps-section img {
+    margin-top: 10px; /* Ajoutez une marge supérieure à l'image */
+    width: 80%; /* Assurez-vous que l'image occupe toute la largeur */
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur maximale */
+    height: auto; /* Assurez-vous que l'image conserve son rapport hauteur/largeur */
+}
+
+
+
+
+
+/* Cinquième section */
+section:nth-child(5) {
+    background-color: #f9f9f9;
+    padding: 100px 0; /* Rembourrage vertical */
+    margin-top: 50px; /* Marge supérieure */
+    margin-bottom: 100px; /* Augmentez la marge inférieure */
+}
+
+
+.modal {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+  
+    margin: 0 auto;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.invite {
+    background-color: #2E9CB6;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.study-text {
+    margin-bottom: 10px;
+}
+
+.invite ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.invite ul li {
+    margin-bottom: 10px;
+}
+
+
+
+/* Positionnement du formulaire à droite */
+.modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form {
+    width: 45%; /* Ajustez la largeur selon vos besoins */
+}
+
+.invite {
+    width: 45%; /* Ajustez la largeur selon vos besoins */
+}
+
+/* Alignement du texte "Study in Cyprus now!" à gauche */
+.study-text {
+    text-align: left;
+}
+
+
+/* Ajoute ces styles dans la section CSS de ton site VF */
+
+/* Background pour la section contenant le formulaire */
+.section-5 {
+  background-color: #f2f2f2; /* Couleur de fond gris clair */
+  padding: 50px 0; /* Espacement intérieur pour le contenu */
+}
+
+/* Style du formulaire de contact */
+.contact-form {
+  background-color: #ffffff; /* Couleur de fond blanche */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 30px; /* Espacement intérieur */
+  max-width: 600px; /* Largeur maximale du formulaire */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+/* Style des champs du formulaire */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style du bouton du formulaire */
+.contact-form button[type="submit"] {
+  background-color: #2E9CB6; /* Couleur de fond bleu */
+  color: #ffffff; /* Couleur du texte blanc */
+  padding: 15px 20px; /* Espacement intérieur */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #1E7A8C; /* Couleur de fond bleu foncé au survol */
+}
+/* Ajuster l'espace pris par la section 5 */
+.fc-site-section {
+    padding: 150px 0; /* Ajuster le padding pour augmenter l'espace vertical */
+    margin-top: 8px; /* Ajuster la marge supérieure pour augmenter l'espace entre les sections */
+    margin-bottom: 100px; /* Ajuster la marge inférieure pour augmenter l'espace entre les sections */
+}
+
+
+/* Modifier le style du formulaire de contact de la cinquième section */
+.fc-site-section .form {
+    width: 0%; /* Augmentation de la largeur du formulaire */
+    background-color: rgba(240, 240, 240, 0.8); /* Arrière-plan gris légèrement transparent */
+    padding: 30px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-right: 20px; /* Marge à droite pour séparer du contenu adjacent */
+}
+
+.fc-site-section .form label {
+    color: #2E9CB6; /* Couleur bleue pour les étiquettes */
+}
+
+.fc-site-section .form input[type="text"],
+.fc-site-section .form input[type="email"],
+.fc-site-section .form input[type="tel"] {
+    width: calc(100% - 22px); /* Largeur des champs ajustée pour tenir compte de la bordure */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #2E9CB6; /* Bordure bleue */
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #2E9CB6; /* Couleur du texte bleu */
+}
+
+.fc-site-section .form button[type="submit"] {
+    background-color: #2E9CB6; /* Couleur de fond bleue pour le bouton */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 15px 20px; /* Espacement intérieur */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fc-site-section .form button[type="submit"]:hover {
+    background-color: #1E7A8C; /* Couleur de fond bleu foncé au survol */
+}
+/* Modifier le style du formulaire de contact de la cinquième section */
+.fc-site-section .form {
+    width: 70%; /* Augmentation de la largeur du formulaire */
+    background-color: rgba(240, 240, 240, 0.8); /* Arrière-plan gris légèrement transparent */
+    padding: 30px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-right: 20px; /* Marge à droite pour séparer du contenu adjacent */
+}
+
+.fc-site-section .form label {
+    color: #2E9CB6; /* Couleur bleue pour les étiquettes */
+}
+
+.fc-site-section .form input[type="text"],
+.fc-site-section .form input[type="email"],
+.fc-site-section .form input[type="tel"] {
+    width: calc(100% - 22px); /* Largeur des champs ajustée pour tenir compte de la bordure */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #2E9CB6; /* Bordure bleue */
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #2E9CB6; /* Couleur du texte bleu */
+}
+
+.fc-site-section .form button[type="submit"] {
+    background-color: #2E9CB6; /* Couleur de fond bleue pour le bouton */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 15px 20px; /* Espacement intérieur */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fc-site-section .form button[type="submit"]:hover {
+    background-color: #1E7A8C; /* Couleur de fond bleu foncé au survol */
+}
