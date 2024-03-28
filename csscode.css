@@ -442,17 +442,6 @@ section:nth-child(5) {
 .contact-form button[type="submit"]:hover {
   background-color: #1E7A8C; /* Couleur de fond bleu foncé au survol */
 }
-/* Ajuster l'espace pris par la section 5 */
-.fc-site-section {
-    margin-top: 8px; /* Ajuster la marge supérieure pour augmenter l'espace entre les sections */
-    margin-bottom: 100px; /* Ajuster la marge inférieure pour augmenter l'espace entre les sections */
-  .fc-site-section {
-    padding-top: 2000px; /* Réduisez le padding en haut */
-    padding-bottom: 5000px; /* Réduisez le padding en bas */
-}
-
-}
-
 
 /* Modifier le style du formulaire de contact de la cinquième section */
 .fc-site-section .form {
