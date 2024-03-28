@@ -96,3 +96,56 @@ function prevPage() {
 
 // Ajout d'un écouteur d'événements pour soumettre le formulaire
 form.addEventListener('submit', submitApplication);
+
+// Récupérer les éléments nécessaires pour la navigation entre les pages
+const pages = document.querySelectorAll('.page');
+const indicators = document.querySelectorAll('.page-indicator');
+
+// Fonction pour afficher la page spécifiée
+function showPage(pageNumber) {
+    // Masquer toutes les pages
+    pages.forEach(page => {
+        page.classList.remove('active');
+    });
+    // Afficher la page spécifiée
+    pages[pageNumber - 1].classList.add('active');
+}
+
+// Fonction pour changer de page vers la page suivante
+function nextPage() {
+    currentPage++;
+    if (currentPage > pages.length) {
+        currentPage = 1;
+    }
+    showPage(currentPage);
+    updateIndicators();
+}
+
+// Fonction pour changer de page vers la page précédente
+function prevPage() {
+    currentPage--;
+    if (currentPage < 1) {
+        currentPage = pages.length;
+    }
+    showPage(currentPage);
+    updateIndicators();
+}
+
+// Fonction pour changer de page en cliquant sur les indicateurs de page
+function changePage(pageNumber) {
+    currentPage = pageNumber;
+    showPage(currentPage);
+    updateIndicators();
+}
+
+// Fonction pour mettre à jour les indicateurs de page
+function updateIndicators() {
+    indicators.forEach(indicator => {
+        indicator.classList.remove('active');
+    });
+    indicators[currentPage - 1].classList.add('active');
+}
+
+// Ajouter des écouteurs d'événements pour les boutons de navigation
+document.querySelector('.arrow-container.left').addEventListener('click', prevPage);
+document.querySelector('.arrow-container.right').addEventListener('click', nextPage);
