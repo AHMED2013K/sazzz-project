@@ -333,8 +333,8 @@ footer {
 /* Cinquième section */
 section:nth-child(5) {
     background-color: #f9f9f9;
-    padding: 120px 0; /* Rembourrage vertical */
-    margin-top: 50px; /* Marge supérieure */
+    padding: 100px 0; /* Rembourrage vertical */
+    margin-top: 20px; /* Marge supérieure */
     margin-bottom: 100px; /* Augmentez la marge inférieure */
 }
 
