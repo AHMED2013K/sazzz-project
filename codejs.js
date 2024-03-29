@@ -123,4 +123,3 @@ document.querySelector('.arrow-container.right').addEventListener('click', nextP
 form.addEventListener('submit', submitApplication);
 
 // Appeler la fonction pour initialiser Tawk.to
-initTawkTo();
