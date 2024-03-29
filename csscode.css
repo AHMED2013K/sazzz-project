@@ -333,9 +333,9 @@ footer {
 /* Cinquième section */
 section:nth-child(5) {
     background-color: #f9f9f9;
-    padding: 50px 0; /* Rembourrage vertical */
-background-size: cover; /* Utiliser cover pour que l'image remplisse la section */
-     background-position: center; /* Centrer l'image de fond */
+    padding: 100px 0; /* Rembourrage vertical */
+    margin-top: 20px; /* Marge supérieure */
+    margin-bottom: 100px; /* Augmentez la marge inférieure */
 }
 
 
