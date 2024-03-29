@@ -122,21 +122,5 @@ document.querySelector('.arrow-container.right').addEventListener('click', nextP
 // Ajout d'un écouteur d'événements pour soumettre le formulaire
 form.addEventListener('submit', submitApplication);
 
-// Fonction pour initialiser Tawk.to
-function initTawkTo() {
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/65faa3851ec1082f04d93ca3/1hpdgtggo';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s1.onload = function() {
-            Tawk_API.setColor('#21C5D8');
-        };
-        s0.parentNode.insertBefore(s1,s0);
-    })();
-}
-
 // Appeler la fonction pour initialiser Tawk.to
 initTawkTo();
