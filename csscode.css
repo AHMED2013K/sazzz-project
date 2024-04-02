@@ -526,3 +526,10 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Ajout de cette propriété pour cacher la barre de défilement horizontale */
 }
+
+@media only screen and (max-width: 600px) {
+    /* Styles spécifiques pour les écrans jusqu'à 600px de large */
+    body {
+        font-size: 14px;
+    }
+}
