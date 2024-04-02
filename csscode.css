@@ -92,7 +92,7 @@
 
 /* Réglage des arrière-plans des pages */
 .page#page1 {
-    background-image: url('https://imgur.com/nRuZLar.jpg');
+    background-image: url('https://imgur.com/gTDByzG.png');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -100,7 +100,7 @@
 }
 
 .page#page2 {
-    background-image: url('https://imgur.com/b7S6UQ9.png'); /* Utilisez l'image appropriée pour "Visa et passeport" */
+    background-image: url('https://imgur.com/ZgOI7g9.png'); /* Utilisez l'image appropriée pour "Visa et passeport" */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -214,7 +214,7 @@ body {
 }
 
 header {
-    background: url('https://i.imgur.com/pYLtUFU.jpg') center/cover no-repeat;
+    background: url('https://imgur.com/yzzBbzX.png') center/cover no-repeat;
     color: #fff;
     padding: 40px 0;
     text-align: center;
@@ -258,9 +258,6 @@ footer {
 }
 .steps-section {
     padding: 300px 0; /* Augmentez la valeur de padding pour plus d'espace */
-}
-.steps-section .background-image {
-    background-image: url('https://imgur.com/zFkgM1N.png');
 }
 .background-image {
     position: relative; /* Modifier la position en relative */
