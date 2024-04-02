@@ -520,3 +520,9 @@ section:nth-child(5) {
 .fc-site-section .form button[type="submit"]:hover {
     background-color: #1E7A8C; /* Couleur de fond bleu foncé au survol */
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Ajout de cette propriété pour cacher la barre de défilement horizontale */
+}
