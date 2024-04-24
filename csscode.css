@@ -580,3 +580,7 @@ body {
 .footer img:hover {
     transform: scale(1.2);
 }
+.footer a {
+    text-decoration: none;
+    border: none; /* Ajoutez cette ligne pour supprimer les bordures */
+}
