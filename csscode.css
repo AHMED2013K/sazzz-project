@@ -533,3 +533,27 @@ body {
         font-size: 14px;
     }
 }
+
+
+
+
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centre les icônes horizontalement */
+    margin-top: 20px; /* Marge supérieure pour l'espace entre le texte du pied de page et les icônes */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Espacement horizontal entre les icônes */
+}
+
+.social-icons img {
+    width: 30px; /* Ajustez la taille des icônes selon vos préférences */
+    height: auto;
+    transition: transform 0.3s ease; /* Effet de transition au survol */
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Agrandit l'icône au survol */
+}
