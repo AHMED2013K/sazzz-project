@@ -595,3 +595,14 @@ body {
 .footer a {
     background-color: transparent; /* Définit la couleur de fond des liens sur transparent */
 }
+.footer a {
+    text-decoration: none;
+}
+
+.footer a img {
+    border: 0; /* Supprime la bordure des images */
+}
+
+.footer a {
+    background-color: transparent; /* Définit la couleur de fond des liens sur transparent */
+}
