@@ -584,3 +584,14 @@ body {
     text-decoration: none;
     border: none; /* Ajoutez cette ligne pour supprimer les bordures */
 }
+.footer a {
+    text-decoration: none;
+}
+
+.footer a img {
+    border: none; /* Pour être sûr que les bordures sont supprimées */
+}
+
+.footer a {
+    background-color: transparent; /* Définit la couleur de fond des liens sur transparent */
+}
