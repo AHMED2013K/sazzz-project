@@ -557,3 +557,26 @@ body {
 .social-icons img:hover {
     transform: scale(1.2); /* Agrandit l'icône au survol */
 }
+
+/* Ajoutez ces règles CSS à votre feuille de style */
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer img {
+    width: 20px; /* Ajustez la taille des icônes selon vos préférences */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.footer img:hover {
+    transform: scale(1.2);
+}
